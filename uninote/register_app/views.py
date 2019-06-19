@@ -11,6 +11,8 @@ from django.urls import reverse
 def homepage(request):
     return render(request,'register_app/homepage.html')
 
+def about(request):
+    return render(request,'register_app/about.html')
 
 @login_required
 def user_logout(request):

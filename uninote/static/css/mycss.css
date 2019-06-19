@@ -1,0 +1,133 @@
+/* STYLING SOCIAL MEDIA ICONS */
+    .fa {
+    padding: 15px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    }
+    .fa:hover {
+    text-shadow: 0 5px 10px #212121;
+    }
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+    .fa-twitter {
+      background: #55ACEE;
+      color: white;
+    }
+    .fa-instagram {
+      background-color: #c13584;
+      color: white;
+    }
+    .logo a{
+      margin-left: 15px;
+    }
+
+/* STYLING NAVBAR */
+.techfont{
+    font-family: 'Russo One', sans-serif;
+    margin-bottom: 10px;
+}
+.bigbrand{
+    font-size: 1.5em;
+}
+.biggerbrand{
+  font-size: 3em;
+}
+.navpad{
+  content: normal;
+  padding: 0px;
+}
+.nav1color{
+  background-color: #254E58;
+}
+.nav2color{
+  background: #112D32;
+}
+a{
+  color:white;
+}
+.colorwhite{
+  color:white;
+}
+body{
+  background: rgba(136,189,188,1);
+}
+
+/* FOR HAMSBURGER ICON */
+.hamsborder{
+  border:2px solid white;
+  border-radius: 5%;
+}
+.hams{
+  width: 30px;
+ height: 3px;
+ background-color: white;
+ margin: 6px 1px;
+}
+
+/* STYLING ABOUT US PAGE */
+.textcontent{
+  text-align: center;
+  color: black;
+  font-family: 'Montserrat';
+  font-size: 1.5em;
+}
+/* FLIP CARD */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+/* POSITION BACK AND FRONT*/
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* text-align: center; */
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* FLIP WHEN MOUSE HOVERS */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #112D32;
+  color: white;
+  transform: rotateY(180deg);
+}
+/* TO MOVE CONTENT ON BACK SIDE TO MIDDLE */
+.middle{
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.5em;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  top: 25%;
+  left: 25%;
+  text-align: center;
+  align-content: center;
+}
+
+.boxy{
+  padding: 5px;
+}
+.extnd{
+  width: 100%;
+}

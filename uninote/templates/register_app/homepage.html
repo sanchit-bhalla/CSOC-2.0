@@ -1,6 +1,24 @@
 {% extends 'register_app/base.html' %}
-{% block body_block %}
-  <div class="jumbotron">
-    <h1>Its our HomePage!</h1>
-  </div>
+{% block content %}
+      	<!--  NAVBAR -->
+      	<nav class="navbar navbar-expand-lg navpad nav1color">
+          <div class="container">
+            <div class="nav navbar-nav techfont">
+              <p class="colorwhite"><a class="navbar-brand biggerbrand" href="{% url 'homepage' %}">Uninote</a>
+                  Student's first choice
+              </p>
+            </div>
+
+            <div class="navbar-nav ml-auto logo">
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-instagram"></a>
+            </div>
+          </div>
+        </nav>
 {% endblock %}
+
+
+  {% block body_block %}
+
+  {% endblock %}

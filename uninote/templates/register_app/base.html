@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
   <head>
     <meta charset="utf-8">
@@ -8,75 +9,35 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <!-- Add icon library for social-media icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One&display=swap" rel="stylesheet">
 
-    <!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <style >
-
-    .fa {
-    padding: 20px;
-    font-size: 20px;
-    /* width: 30px; */
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    }
-
-    .fa:hover {
-    text-shadow: 0 5px 10px #212121;
-    }
-
-    .fa-facebook {
-      background: #3B5998;
-      color: white;
-    }
-
-    .fa-twitter {
-      background: #55ACEE;
-      color: white;
-    }
-
-    .fa-instagram {
-      background-color: #c13584;
-      color: white;
-    }
-
-    .logo a{
-      margin: 5px 10px;
-    }
-  </style>
   </head>
+
   <body>
+            {% block content %}
+            <!-- anything outside this will be inherited  -->
+            {% endblock content %}
 
-  	<!--  NAVBAR -->
-
-  	<nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <div class="">
-          <a class="navbar-brand" href="{% url 'homepage' %}">Uninote</a>
-        </div>
-
-        <div class="nav navbar-nav navbar-right logo">
-          <a href="#" class="fa fa-facebook"></a>
-          <a href="#" class="fa fa-twitter"></a>
-          <a href="#" class="fa fa-instagram"></a>
-        </div>
-      </div>
-    </nav>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg nav2color techfont">
       <!-- <div class="container"> -->
-          <a class="navbar-brand" href="{% url 'homepage' %}">Home</a>
+          <a class="navbar-brand bigbrand" href="{% url 'homepage' %}">Home</a>
 
           <!-- Brand and toggle get grouped for better mobile display -->
           <!-- This is the actual code that creates the "hamburger icon" -->
           <!-- The data-target grabs ids to put into the icon -->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <button class="navbar-toggler hamsborder" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+              <div class="hams"></div>
+              <div class="hams"></div>
+              <div class="hams"></div>
+            </span>
           </button>
-
 
           <!-- Anything inside of collapse navbar-collapse goes into the "hamburger" -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -85,7 +46,7 @@
               <!-- DROPDOWN MENU FOR DIFFERENT BRANCHES -->
               <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Stream
+                  Notes
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbar-dropdown-menu">
                   <a class="dropdown-item" href="#">B.Tech</a>
@@ -129,6 +90,7 @@
 
             <!-- STUFF ON THE RIGHT -->
             <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" href="{% url 'register_app:about' %}">About</a>
               <a class="nav-item nav-link" href="#">Help</a>
 
 
@@ -147,11 +109,11 @@
         <!-- </div> -->
     </nav>
 
-  <div class="container">
-    {% block body_block %}
-    <!-- anything outside this will be inherited  -->
-    {% endblock %}
-  </div>
+    <div class="container">
+      {% block body_block %}
+      <!-- anything outside this will inherited when extends -->
+      {% endblock %}
+    </div>
 
 
   <!-- Need to have JQuery and Javascript for DropDown Actions to work -->
@@ -159,6 +121,6 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+  <script>
 </body>
 </html>

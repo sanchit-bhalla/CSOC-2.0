@@ -1,0 +1,58 @@
+{% extends 'register_app/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<!-- <style media="screen">
+  .boxy{
+    padding: 5px;
+  }
+  .extnd{
+    width: 100%;
+  }
+</style> -->
+
+  <div class="textcontent">
+    <h1><strong>About Uninote!</strong></h1>
+    <p><em>text goes here</em></p>
+  </div>
+  <div class="textcontent">
+    <h1><strong>Creaters</strong></h1>
+  </div>
+  <div class="row">
+
+    <div class="col-md-6 col-sm-12 boxy">
+      <img class="img-thumbnail img-fluid extnd" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
+    </div>
+
+    <div class="col-md-6 col-sm-12 boxy">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img class="img-thumbnail img-fluid extnd" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
+          </div>
+          <div class="flip-card-back">
+            <div class="middle">
+                <p>Sanchit</p>
+                <p>Web Developer</p>
+                <p>
+                  <a href="#" class="fa fa-facebook"></a>
+                  <a href="#" class="fa fa-twitter"></a>
+                  <a href="#" class="fa fa-instagram"></a>
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-sm-12 boxy">
+      <img class="img-thumbnail img-fluid extnd" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
+    </div>
+
+    <div class="col-md-6 col-sm-12 boxy">
+      <img class="img-thumbnail img-fluid extnd" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
+    </div>
+
+
+    </div>
+
+    {% endblock %}
