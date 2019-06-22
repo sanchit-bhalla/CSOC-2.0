@@ -26,6 +26,7 @@
 
     <nav class="navbar navbar-expand-lg nav2color techfont">
       <!-- <div class="container"> -->
+      <div class="container-fluid">
           <a class="navbar-brand bigbrand" href="{% url 'homepage' %}">Home</a>
 
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -90,6 +91,7 @@
 
             <!-- STUFF ON THE RIGHT -->
             <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" href="{% url 'register_app:discussions' %}">Discussions</a>
               <a class="nav-item nav-link" href="{% url 'register_app:about' %}">About</a>
               <a class="nav-item nav-link" href="#">Help</a>
 
@@ -106,6 +108,7 @@
 
 
           </div> <!-- /.navbar-collapse -->
+        </div>
         <!-- </div> -->
     </nav>
 

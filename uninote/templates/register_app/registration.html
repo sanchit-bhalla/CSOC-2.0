@@ -8,11 +8,11 @@
       <h1>Register here!</h1>
 
       <!-- enctype ==> so that images will upload -->
-      <form enctype="multipart/form-data" method="POST">
+      <form enctype="multipart/form-data" class="form-group" method="POST">
         {% csrf_token %}  <!--csrf_token is used whenever there is post for security-->
 
         <!-- .as_p is used so that form is top to down otherwise whole form is in single line-->
-        {{ user_form.as_p }}
+        {{ user_form.as_p}}
         {{ profile_form.as_p }}
 
         <input type="submit"  value="SignUp">

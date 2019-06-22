@@ -21,7 +21,9 @@ from django.urls import include
 urlpatterns = [
     re_path(r'^$', homepage,name='homepage'),
     path('admin/', admin.site.urls),
-    re_path(r'^register_app/', include('register_app.urls')),
+    re_path(r'^register_app/', include('register_app.urls',namespace='register_app')),
+    re_path(r'^register_app/',include('django.contrib.auth.urls')),
     re_path(r'^logout/', user_logout,name='logout'),
-
+    re_path(r'^posts/',include('posts.urls',namespace='posts')),
+    re_path(r'^groups/',include('groups.urls',namespace='groups')),
 ]

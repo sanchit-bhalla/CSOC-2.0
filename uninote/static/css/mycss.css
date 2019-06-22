@@ -131,3 +131,13 @@ body{
 .extnd{
   width: 100%;
 }
+
+/* make registration and login form nicer */
+.space{
+  margin-top: 10px;
+}
+
+.myfieldclass {
+  width: 100%;
+  margin:2px;
+}

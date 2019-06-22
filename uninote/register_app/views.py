@@ -14,6 +14,9 @@ def homepage(request):
 def about(request):
     return render(request,'register_app/about.html')
 
+def discussions(request):
+    return render(request,'register_app/discussions.html')
+
 @login_required
 def user_logout(request):
     logout(request)
