@@ -1,7 +1,7 @@
 {% extends "groups/group_base.html" %}
 
 {% block pregroup %}
-<div class="col-sm-4">
+<div class="col-md-4">
 	<div class="content">
 		{% if user.is_authenticated %}
 		<h2>
@@ -21,7 +21,7 @@
 {% endblock %}
 
 {% block group_content %}
-<div class="col-sm-8>
+<div class="col-md-8>
 	<div class="list-group">
 		{% for group in object_list %}
 		  <a class="list-group-item" href="{% url 'groups:single' slug=group.slug %}">
