@@ -20,15 +20,13 @@
 	<div class="card card-with-shadow">
 		<div class="content">
 			<h5 class="title">All groups</h5>
+
 			<ul class="list-unstyled">
-				{# {% get_other_groups as other_groups %}#}
+				{#{% get_other_groups as other_groups %}#}
 				{% for other_group in get_other_groups %}
-					<li class="group li-with-bullet"><a href="{% url 'groups:single' slug=other_group.slug %}">{{ other_group.name }}</a></li>
+				<li class="group li-with-bullet"><a href="{% url 'groups:single' slug=other_group.slug %}">{{ other_group.name }}</a></li>
 				{% endfor %}
 			</ul>
-
-
-
 
 		</div>
 	</div>

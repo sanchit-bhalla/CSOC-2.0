@@ -1,10 +1,8 @@
 {% extends "discussions.html" %}
 {% block discuss %}
-  <div class="container">
     <div class="row">
-      {% block pregroup %}{% endblock %}
+      {% block pregroup %}{% endblock pregroup %}
       {% block group_content %}{% endblock %}
-      {% block postgroup %}{% endblock %}
+      {% block postgroup %}{% endblock postgroup %}
     </div>
-  </div>
 {% endblock %}
