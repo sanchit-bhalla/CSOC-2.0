@@ -29,3 +29,15 @@ class Post(models.Model):
     class Meta():
         ordering = ['-created_at']
         unique_together = ['user','message']
+
+class Comment(models.Model):
+    post = models.ForeignKey('posts.post',related_name="comments",on_delete=models.CASCADE)
+    author=models.CharField(max_length=50)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.message
+
+    def get_absolute_url(self):
+        return reverse('posts:single',kwargs={'username':self.post.user.username,'pk':self.pk})

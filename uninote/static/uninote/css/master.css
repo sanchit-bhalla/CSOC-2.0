@@ -3,6 +3,17 @@
   font-size: 2em;
 }
 
+#centerrow {
+  position: absolute;
+  /* width: 300px;
+  height: 200px; */
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  /* background: red; */
+}
+
 /* add space b/w icons  */
 .icon a{
   margin: 10px;
@@ -14,7 +25,10 @@
   padding: 5px;
 }
 
-
+.btn-comment{
+  position: absolute;
+  right: 0px;
+}
 /* STYLING SOCIAL MEDIA ICONS */
     .fa {
     padding: 15px;
