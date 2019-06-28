@@ -43,7 +43,7 @@ class Subject(models.Model):
 class PdfFiles(models.Model):
 
     subject=models.ForeignKey(Subject,on_delete=models.CASCADE)
-    files=models.FileField(upload_to='myfiles',null=True,blank=True)
+    files=models.FileField(upload_to='notes/myfiles',null=True,blank=True)
 
 
     class Meta:

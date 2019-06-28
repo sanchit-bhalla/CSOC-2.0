@@ -2,6 +2,7 @@
 
 
 {% block body_block %}
+{% load static %}
 <br>
 <script>
 function disnotes(){
@@ -21,8 +22,10 @@ function disnotes(){
 			var obj=JSON.parse(this.responseText);
 			console.log(JSON.stringify(obj));
 			console.log(obj[0].department);
+			console.log({{MEDIA_ROOT}}obj[0].files[0])
+			var s1='media/files/Rings.Pdf'
 			var s=''
-			s=s+'<object width="200" height="200" data="media/myfiles/Rings.pdf"></object>'
+			s=s+'<embed src=s1 type="application/pdf" width="400px" height="400px"></embed>'
 		    s=s+'<p>'+obj[0].department+'</p>';
 			s=s+'<p>'+obj[0].subject+'</p>';
 			s=s+'<p>'+obj[0].year+'</p>';

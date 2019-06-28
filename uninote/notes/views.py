@@ -45,10 +45,23 @@ def displaynotes(request):
         d['subject']=x.subject.subject
         
         file_list=[]
+
+        #fs = FileSystemStorage()
         
         for f in x.files.all():
 
-            file_list.append(f.files.url)
+            file_list.append(f.files.name)
+
+##            filename = f.files.name
+##            if fs.exists(filename):
+##                 with fs.open(filename) as pdf:
+##                    response = HttpResponse(pdf, content_type='application/pdf')
+##                    response['Content-Disposition'] = 'inline; filename=f.files.name'
+##                    return response
+##            else:
+##                    return HttpResponseNotFound('The requested pdf was not found in our server.')
+
+
         
         d['files']=file_list
         
@@ -56,19 +69,10 @@ def displaynotes(request):
 
     return JsonResponse(l,safe=False)
 
-            
 def pdf_view(request):
-    fs = FileSystemStorage()
-    filename = 'myfiles/Amritsar_Hardware.pdf'
-    if fs.exists(filename):
-        with fs.open(filename) as pdf:
-            response = HttpResponse(pdf, content_type='application/pdf')
-            response['Content-Disposition'] = 'inline; filename="myfiles/Amritsar_Hardware.pdf"'
-            return response
-    else:
-        return HttpResponseNotFound('The requested pdf was not found in our server.')
 
-
+    pass
+    
     
 
 
