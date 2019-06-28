@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'register_app',
     'groups',
     'posts',
+    'notes',
 ]
 
 MIDDLEWARE = [

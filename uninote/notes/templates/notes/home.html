@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<div  class='row'>
+{% for x in deptset %}
+<div class='col-sm-4' style='text-align:center;padding:30px'>
+<h1>{{x.dept}}</h1>
+<button style='margin:20px;padding:15px;' type='button'  class='bt1'><a href='{% url "notes:getnotes" %}?dept={{x.dept}}' class='a1'>Get Notes</a></button>
+</div>
+{% endfor %}
+</div>
+
+
+{% endblock %}

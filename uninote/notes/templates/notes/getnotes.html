@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% block body_block %}
+<br>
+<script>
+function disnotes(){
+	
+	
+	
+	var department=document.getElementById('department').value;
+	var year=document.getElementById('year').value;
+	var subject=document.getElementById('subject').value;
+	
+	
+	var xhttp=new XMLHttpRequest();
+	xhttp.onreadystatechange=function(){
+		
+		if(this.readyState==4 & this.status==200){
+			
+			var obj=JSON.parse(this.responseText);
+			console.log(JSON.stringify(obj));
+			console.log(obj[0].department);
+			var s=''
+			s=s+'<object width="200" height="200" data="media/myfiles/Rings.pdf"></object>'
+		    s=s+'<p>'+obj[0].department+'</p>';
+			s=s+'<p>'+obj[0].subject+'</p>';
+			s=s+'<p>'+obj[0].year+'</p>';
+			
+			
+			
+			document.getElementById('demo').innerHTML=s;
+			
+			
+			
+			
+		}
+		
+		
+	};
+	
+	xhttp.open('GET','displaynotes?year='+year+'&subject='+subject+'&department='+department,true);
+	xhttp.send();
+	
+	
+}
+</script>
+
+<h1 style='text-align:center;text-decoration:underline'>{{form.department.value}}</h1>
+<br><br>
+<form method='get' action='{% url "notes:displaynotes" %}' >
+
+{{form.as_p}}
+
+<br>
+<input type='button' value='submit' onclick='disnotes()' class='btn btn-info'>
+</form>
+<br><br><br>
+
+<span id='demo'></span>
+{% endblock %}

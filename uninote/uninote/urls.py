@@ -29,4 +29,5 @@ urlpatterns = [
     re_path(r'^thanks/$',views.Thanks.as_view(),name='thanks'),
     re_path(r'^posts/',include('posts.urls',namespace='posts')),
     re_path(r'^groups/',include('groups.urls',namespace='groups')),
+    path('notes/',include('notes.urls')),
 ]
