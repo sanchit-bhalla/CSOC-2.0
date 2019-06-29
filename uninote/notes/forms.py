@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import CharField,ModelForm,ChoiceField
+from django.forms import CharField,ModelForm,ChoiceField,Select
 from .models import *
 
 
@@ -13,7 +13,7 @@ class GetNotes(ModelForm):
 
         subjects.append((x.subject,x.subject))
     CHOICES=subjects
-    subject=forms.ChoiceField(choices=CHOICES)
+    subject=forms.ChoiceField(choices=CHOICES,widget=forms.Select(attrs={'class':'form-control'}))
 
     
     class Meta:
@@ -21,5 +21,14 @@ class GetNotes(ModelForm):
         model=Notes
 
         fields=['year','subject']
+
+
+
+        widgets={
+                   'year':Select(attrs={'class':'form-control'})
+
+
+
+            }
 
         

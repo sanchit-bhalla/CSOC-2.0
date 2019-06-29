@@ -46,28 +46,15 @@ def displaynotes(request):
         
         file_list=[]
 
-        #fs = FileSystemStorage()
-        
         for f in x.files.all():
 
-            file_list.append(f.files.name)
+            file_list.append(f.files.url)
 
-##            filename = f.files.name
-##            if fs.exists(filename):
-##                 with fs.open(filename) as pdf:
-##                    response = HttpResponse(pdf, content_type='application/pdf')
-##                    response['Content-Disposition'] = 'inline; filename=f.files.name'
-##                    return response
-##            else:
-##                    return HttpResponseNotFound('The requested pdf was not found in our server.')
-
-
-        
         d['files']=file_list
-        
+         
         l.append(d)
 
-    return JsonResponse(l,safe=False)
+        return render(request=request,template_name='notes/displaypdf.html',context={'mydata':l})
 
 def pdf_view(request):
 

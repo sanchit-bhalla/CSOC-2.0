@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<div  class='row'>
+{% for x in mydata  %}
+<div class='col-sm-4' style='text-align:center;padding:30px'>
+{% for p in x.files %}
+<a href='{{p}}'>{{p}}</a>
+{% endfor %}
+</div>
+{% endfor %}
+</div>
+
+
+{% endblock %}
