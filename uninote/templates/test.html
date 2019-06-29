@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block body_block %}
 <div class="jumbotron">
-  <h1>You are now logged in!</h1>
+  <div class="signupbottom">
+    <h1>You are now logged in!</h1>
+  </div>
+<a class="btn btn-lg btn-primary" href="{% url 'homepage' %}">close</a>
 </div>
 {% endblock %}

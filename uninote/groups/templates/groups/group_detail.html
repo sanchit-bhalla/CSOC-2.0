@@ -6,19 +6,21 @@
 <h2> Member Count: {{group.members.count}}</h2>
 
   <div class="content">
-
+      {% if user.is_authenticated %}
 				{% if user in group.members.all %}
-					<a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-remove-circle"></span> Leave</a>
+					<a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-primary"><span class="glyphicon glyphicon-remove-circle"></span> Leave</a>
 				{% else %}
-					<a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-ok-circle"></span> Join</a>
+					<a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span> Join</a>
 				{% endif %}
-
+      {% else %}
+        <a href="{% url 'register_app:login' %}" class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span> Join</a>
+      {% endif %}
 </div>
 {% endblock pregroup %}
 
 
 {% block group_content %}
-<div class="col-md-8">
+<div class="col-xs-8">
 	{% if group.posts.count == 0 %}
 	<h2>No posts in this group yet!</h2>
 

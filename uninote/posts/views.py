@@ -80,46 +80,25 @@ class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
 
 #################################################################################################
 ################################### COMMENT VIEWS ##############################################
-# @login_required
+@login_required
 def add_comment_to_post(request,pk):
     post = get_object_or_404(models.Post,pk=pk)
+
     if request.method == "POST":
         form = forms.CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
-            form.instance.request = post.objects.get(pk=pk)
             comment.save()
-            return HttpResponseRedirect(reverse('posts:single', kwargs={'pk': pk}))
-            # return redirect('posts:single',pk=post.pk)
-            # return render(request,'posts/post_list.html',{'form':form})
-
+            return redirect('posts:single', pk=post.pk,username=post.user.username)
     else:
         form = forms.CommentForm()
     return render(request,'posts/comment_form.html',{'form':form})
 
-
-# @login_required
-# def add_comment_to_post(request,pk):
-#     post = get_object_or_404(models.Post,pk=pk)
-#     if request.method == "POST":
-#         form = forms.CommentForm(request.POST)
-#         if form.is_valid():
-#             comment = form.save(commit=False)
-#             comment.post = post
-#             comment.save()
-#             return redirect('posts:single')
-            # def get_redirect_url(self, *args, **kwargs):
-            # return reverse("groups:single",kwargs={"slug": self.kwargs.get("slug")})
-    #
-    # else:
-    #     form = forms.CommentForm()
-    # return render(request,'posts/comment_form.html',{'form':form})
-    #
 
 @login_required
 def comment_remove(request,pk):
     comment = get_object_or_404(models.Comment,pk=pk)
     post_pk = comment.post.pk
     comment.delete()
-    # return redirect('posts:single',pk=post_pk)
+    # return redirect('posts:single', pk=post_pk, username=post.user.username)

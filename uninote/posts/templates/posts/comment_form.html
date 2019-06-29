@@ -1,7 +1,7 @@
 {% extends "posts/post_base.html" %}
 
 {% block post_content %}
-  <h1>New Post</h1>
+  <h1>write your comment</h1>
   <form class="post_form" method="post">
     {% csrf_token %}
     {{ form.as_p }}

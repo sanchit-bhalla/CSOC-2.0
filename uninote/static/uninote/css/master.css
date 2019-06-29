@@ -1,6 +1,13 @@
 .discussion_heading{
   text-align: center;
+  font-family: 'Russo One', sans-serif;
   font-size: 2em;
+  border: 1px solid black;
+  margin: 30px;
+}
+
+.signupbottom{
+  margin-bottom: 50px;
 }
 
 #centerrow {
@@ -30,28 +37,28 @@
   right: 0px;
 }
 /* STYLING SOCIAL MEDIA ICONS */
-    .fa {
-    padding: 15px;
-    font-size: 15px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    }
-    .fa:hover {
-    text-shadow: 0 5px 10px #212121;
-    }
-    .fa-facebook {
-      background: #3B5998;
-      color: white;
-    }
-    .fa-twitter {
-      background: #55ACEE;
-      color: white;
-    }
-    .fa-instagram {
-      background-color: #c13584;
-      color: white;
-    }
+.fa {
+  padding: 15px;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.fa:hover {
+  text-shadow: 0 5px 10px #212121;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-instagram {
+  background-color: #c13584;
+  color: white;
+}
 /* STYLING NAVBAR */
 .techfont{
     font-family: 'Russo One', sans-serif;
@@ -70,9 +77,7 @@
 .nav2color{
   background: #112D32;
 }
-a{
-  color:white;
-}
+
 .colorwhite{
   color:white;
 }
