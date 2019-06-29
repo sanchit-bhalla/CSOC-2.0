@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
       	<!--  NAVBAR -->
       <div class="uppernav"
@@ -38,6 +39,11 @@
 {% endblock %}
 
 
-  {% block body_block %}
-
-  {% endblock %}
+{% block body_block %}
+<div class="row">
+  <div class="col-xs-2"></div>
+  <div class="col-xs-8">
+    <img src="{% static 'pics/uninotelogo.png' %}" alt="No pic">
+  </div>
+</div>
+{% endblock %}

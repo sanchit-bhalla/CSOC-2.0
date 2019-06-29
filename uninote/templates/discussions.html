@@ -2,26 +2,26 @@
 {% load staticfiles %}
 {% block body_block %}
         <!-- <div id="centerrow"> -->
-          <div id="centerrow" class="row">
-            <div class="col-xs-8">
-                {% if user.is_authenticated %}
-                  <div class="row">
-                    <div class="col-xs-4">
-                        <p><a href="{% url 'posts:create' %}" class="btn btn-primary">Ask Question</a></p>
-                    </div>
-                    <div class="col-xs-4">
-                        <p><a href="{% url 'groups:all' %}" class="btn btn-primary">Groups</a></p>
-                    </div>
-                    <div class="col-xs-4">
-                        <p><a href="{% url 'groups:create' %}" class="btn btn-primary">Create Group</a></p>
-                    </div>
-                  </div>
-
-    						{% else %}
-    						      <a href="{% url 'groups:all' %}"class="btn btn-primary btn-lg">Groups</a>
-    						{% endif %}
+        <div class="container">
+          {% if user.is_authenticated %}
+            <div class="row">
+              <div class="col-xs-4">
+                <p><a href="{% url 'groups:create' %}" class="btn btn-primary">Create Group</a></p
               </div>
-          </div>
+              <div class="col-xs-4">
+                  <p><a href="{% url 'groups:all' %}" class="btn btn-primary">Groups</a></p>
+              </div>
+              <div class="col-xs-4">
+                <p><a href="{% url 'posts:create' %}" class="btn btn-primary">Ask Question</a></p>
+              </div>
+             </div>
+          {% else %}
+                <a href="{% url 'groups:all' %}"class="btn btn-primary btn-lg">Groups</a>
+          {% endif %}
+        </div>
+    <!-- </div>
+        </div>
+                 -->
         <!-- </div> -->
         <div class="discussion_heading">
           <h1>Ask your questions in relevant group for quick answers</h1>
