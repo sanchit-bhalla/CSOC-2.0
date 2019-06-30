@@ -20,8 +20,23 @@ def getnotes(request):
     department=request.GET['dept']
 
 
+    department=request.GET['dept']
+
+    for x in Departments.objects.all():
+        
+        dept_info={}
+        if x.dept==department:
+            
+
+            dept_info['dept']=x.dept
+            dept_info['HOD']=x.HOD
+
+            break
+
+
+
     form=GetNotes(initial={'department':department},auto_id=True)
-    return render(request=request,template_name='notes/getnotes.html',context={'form':form})
+    return render(request=request,template_name='notes/getnotes.html',context={'form':form,'dept_info':dept_info})
 
 
 
@@ -48,7 +63,7 @@ def displaynotes(request):
 
         for f in x.files.all():
 
-            file_list.append(f.files.url)
+            file_list.append((f.files.url,f.image.url))
 
         d['files']=file_list
          

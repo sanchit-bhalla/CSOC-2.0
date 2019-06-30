@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'notes/header.html' %}
 
 
 {% block body_block %}
 {% load static %}
 <br>
 <script>
-function disnotes(){
+/*function disnotes(){
 	
 	
 	
@@ -46,19 +46,55 @@ function disnotes(){
 	xhttp.send();
 	
 	
-}
+*/
 </script>
 
-<h1 style='text-align:center;text-decoration:underline'>{{form.department.value}}</h1>
+<div class='jumbotron jumbotron-fluid'>
+
+<div class='container container-fluid'>
+
+<div class='row'>
+
+<div class='col-sm-4'></div>
+
+<div class='col-sm-4'>
+
+<!---Flip Card-->
+<div class='flip-card'>
+ <div class='flip-card-inner'>
+ 
+ 
+  <div class='flip-card-front'>
+
+       <div class='dept_heading'>{{form.department.value}}</div>
+	   
+  </div>
+  
+  <div class='flip-card-back'>
+     <h2>{{dept_info.dept}}</h2>
+	 <p>{{dept_info.HOD}}</p>
+  </div>
+  
+  
+ </div>
+</div>
+<!---Flip Card-->
+
+</div>
+<div class='col-sm-4'></div>
+
+</div>
+
 <br><br>
 <form method='get' action='{% url "notes:displaynotes" %}' >
 
 {{form.as_p}}
 
 <br>
-<input type='submit' value='submit' class='btn btn-info'>
+<input type='submit' value='submit' class='getnotesbutton'>
 </form>
-<br><br><br>
 
-<span id='demo'></span>
+</div>
+</div>
+<br><br><br>
 {% endblock %}

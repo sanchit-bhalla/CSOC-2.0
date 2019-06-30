@@ -1,14 +1,28 @@
-{% extends 'base.html' %}
+{% extends 'notes/header.html' %}
 
 {% block body_block %}
+<div class='jumbotron jumbotron-fluid'>
+<div class='container container-fluid'>
+
 <div  class='row'>
 {% for x in mydata  %}
-<div class='col-sm-4' style='text-align:center;padding:30px'>
-{% for p in x.files %}
-<a href='{{p}}'>{{p}}</a>
+{% for p,i in x.files %}
+
+<div class='col-sm-3' style='text-align:center;padding:30px'>
+
+
+<img src='{{i}}' alt='image' width="250px" height="300px" style='margin-bottom:30px;'>
+
+</p><a class='download' href='{{p}}'><span style='margin-right:5px;' class='glyphicon glyphicon-download-alt'></span>Download</a></p>
+
+
+</div>
+
+{% endfor %}
 {% endfor %}
 </div>
-{% endfor %}
+
+</div>
 </div>
 
 

@@ -44,6 +44,7 @@ class PdfFiles(models.Model):
 
     subject=models.ForeignKey(Subject,on_delete=models.CASCADE)
     files=models.FileField(upload_to='notes/myfiles',null=True,blank=True)
+    image=models.ImageField(upload_to='myimages',default=1)
 
 
     class Meta:
