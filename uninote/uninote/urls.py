@@ -29,12 +29,12 @@ urlpatterns = [
     re_path(r'^discussions/', views.Discussions.as_view(),name='discussions'),
     re_path(r'^test/$',views.Test.as_view(),name='test'),
     re_path(r'^thanks/$',views.Thanks.as_view(),name='thanks'),
+    re_path(r'^response/$',views.Response.as_view(),name='response'),
     re_path(r'^posts/',include('posts.urls',namespace='posts')),
     re_path(r'^groups/',include('groups.urls',namespace='groups')),
     path('notes/',include('notes.urls')),
 
-    
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
-

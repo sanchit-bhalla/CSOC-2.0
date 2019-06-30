@@ -45,7 +45,7 @@
                     <span class="icon-bar"></span>
                   </button>
 
-                  <a class="navbar-brand bigbrand" href="{% url 'homepage' %}">
+                  <a class="navbar-brand bigbrand colorwhite" href="{% url 'homepage' %}">
                     <span class="glyphicon glyphicon-home"></span></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,32 +53,32 @@
                   <ul class="nav navbar-nav">
 
                     <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Notes <span class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle colorwhite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Notes <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="#">B.Tech</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">MBA</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">B.Sc</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">M.com</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Others</a></li>
+                        <li><a href="#" class="colorwhite">B.Tech</a></li>
+                        <li role="separator" class="divider colorwhite"></li>
+                        <li><a href="#" class="colorwhite">MBA</a></li>
+                        <li role="separator" class="divider colorwhite"></li>
+                        <li><a href="#" class="colorwhite">B.Sc</a></li>
+                        <li role="separator" class="divider colorwhite"></li>
+                        <li><a href="#" class="colorwhite">M.com</a></li>
+                        <li role="separator" class="divider colorwhite"></li>
+                        <li><a href="#" class="colorwhite">Others</a></li>
                       </ul>
                     </li>
 
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Papers<span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="#">B.Tech</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">MBA</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">B.Sc</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">M.com</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Others</a></li>
+                        <li><a href="#" class="colorwhite">B.Tech</a></li>
+                        <li role="separator" class="divider colorwhite"></li>
+                        <li><a href="#" class="colorwhite">MBA</a></li>
+                        <li role="separator" class="divider colorwhite"></li>
+                        <li><a href="#" class="colorwhite">B.Sc</a></li>
+                        <li role="separator" class="divider colorwhite"></li>
+                        <li><a href="#" class="colorwhite">M.com</a></li>
+                        <li role="separator" class="divider colorwhite"></li>
+                        <li><a href="#" class="colorwhite">Others</a></li>
                       </ul>
                     </li>
 
@@ -92,16 +92,16 @@
 
                   <!-- content on right side -->
                   <ul class="nav navbar-nav navbar-right">
-                      <li><a href="{% url 'discussions' %}">Discussions</a></li>
-                      <li><a href="{% url 'about' %}">About</a></li>
-                      <li><a href="#">Help</a></li>
+                      <li><a class="colorwhite" href="{% url 'discussions' %}">Discussions</a></li>
+                      <li><a class="colorwhite" href="{% url 'about' %}">About</a></li>
+                      <li><a href="#" class="colorwhite">Help</a></li>
 
 
                       {% if user.is_authenticated %}
-                        <li><a href="{% url 'register_app:logout' %}">Logout</a></li>
+                        <li><a class="colorwhite" href="{% url 'register_app:logout' %}">Logout</a></li>
                       {% else %}
-                        <li><a href="{% url 'register_app:login' %}">Login</a></li>
-                        <li><a href="{% url 'register_app:signup' %}">SignUp</a></li>
+                        <li><a class="colorwhite" href="{% url 'register_app:login' %}">Login</a></li>
+                        <li><a class="colorwhite" href="{% url 'register_app:signup' %}">SignUp</a></li>
                       {% endif %}
                   </ul>
 

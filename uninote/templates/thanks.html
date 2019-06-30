@@ -1,6 +1,38 @@
 {% extends 'base.html' %}
 {% block body_block %}
 <div class="jumbotron">
+  <div class="signupbottom">
     <h1>Thanks for visiting. Come back soon</h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>How was your experience</h1>
+    </div>
+    <div class="col-xs-12">
+      <a class="btn btn-primary" href="{% url 'homepage' %}">Not now</a>
+    </div>
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+        <fieldset class="rating">
+          <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome"></label>
+          <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Superb"></label>
+          <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Superb"></label>
+          <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Good"></label>
+          <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Average"></label>
+          <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Not good"></label>
+          <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Poor"></label>
+          <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Bad"></label>
+          <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Very poor"></label>
+          <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Hate it"></label>
+        </fieldset>
+    </div>
+    <div class="col-xs-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4"></div>
+    <div class="">
+      <a href="{% url 'response' %}" class="btn btn-primary">Submit</a>
+    </div>
+  </div>
 </div>
 {% endblock %}

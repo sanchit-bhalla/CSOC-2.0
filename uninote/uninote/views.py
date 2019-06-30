@@ -15,3 +15,6 @@ class About(TemplateView):
 
 class Discussions(TemplateView):
     template_name = 'discussions.html'
+
+class Response(TemplateView):
+    template_name = 'response.html'
