@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import InvalidRequest,Warning
 from django.conf import settings
 
 app_name='notes'
@@ -10,7 +11,9 @@ urlpatterns=[
                path('',views.homepage,name='homepage'),
                path('getnotes',views.getnotes,name='getnotes'),
                path('displaynotes',views.displaynotes,name='displaynotes'),
-               path('pdfview',views.pdf_view,name='pdfview'),
+    
+               path('invalid/',InvalidRequest.as_view(extra_context={'warning1':'Please Enter Valid Request'}),name='invalid'),
+               path('warning/',Warning.as_view(extra_context={'warning2':'No Files Present'}),name='warning')
 
     ]
 

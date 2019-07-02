@@ -68,31 +68,29 @@
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Notes <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="#">B.Tech</a></li>
+					  {% for x in deptset %}
+                        <li><a href='{% url "notes:getnotes" %}?dept={{x.dept}}'>{{x.dept}}</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">MBA</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">B.Sc</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">M.com</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Others</a></li>
-                      </ul>
+                        {% endfor %}
+                                              
+		              </ul>
                     </li>
 
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Papers<span class="caret"></span></a>
                       <ul class="dropdown-menu">
+					   {% for x in deptset %}
 					  <li><a href="#">{{x.dept}}</a></li>
                         <li role="separator" class="divider"></l>
+						{% endfor %}
                         </ul>
                     </li>
 
-                      <form class="navbar-form navbar-left" role="search">
+                      <form class="navbar-form navbar-left" method='get' action='{% url "notes:getnotes" %}'>
                         <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Search">
+                          <input type="text" class="form-control" placeholder="Search" name='dept'>
                         </div>
-                        <button type="submit" class="btn" style="background-color:#008ECC;color:white;font-weight:bold"'>Submit</button>
+                        <button type="submit" class="btn" style="background-color:#008ECC;color:white;font-weight:bold">Submit</button>
                       </form>
                   </ul>
 

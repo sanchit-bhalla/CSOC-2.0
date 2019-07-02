@@ -4,10 +4,16 @@ from .forms import *
 from django.db.models import Q
 from django.http import *
 from django.core.files.storage import FileSystemStorage
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound,HttpResponseRedirect
+from django.views.generic.base import TemplateView
+
+
+deptset=Departments.objects.all()
 
 
 def homepage(request):
+
+    global deptset
 
     
     deptset=Departments.objects.all()
@@ -16,32 +22,38 @@ def homepage(request):
 
 def getnotes(request):
 
+    global deptset
+
 
     department=request.GET['dept']
 
-
-    department=request.GET['dept']
+    flag=0
 
     for x in Departments.objects.all():
-        
-        dept_info={}
-        if x.dept==department:
-            
 
+        if x.dept==department:
+
+            flag=1
+
+            dept_info={}
             dept_info['dept']=x.dept
             dept_info['HOD']=x.HOD
 
             break
 
+    if flag==0:
 
-
+            return HttpResponseRedirect('invalid/')
+    
     form=GetNotes(initial={'department':department},auto_id=True)
-    return render(request=request,template_name='notes/getnotes.html',context={'form':form,'dept_info':dept_info})
+    return render(request=request,template_name='notes/getnotes.html',context={'form':form,'dept_info':dept_info,'deptset':deptset})
 
 
 
 
 def displaynotes(request):
+
+    global deptset
 
     dept=request.GET['department'].replace('+','%20')
     sub=request.GET['subject']
@@ -49,31 +61,63 @@ def displaynotes(request):
 
     queryset=Notes.objects.all()
     queryset=queryset.filter(Q(department__dept=dept),Q(subject__subject=sub),Q(year=yr))
+    if len(queryset)==0:
 
-    l=[]
+        return HttpResponseRedirect('invalid/')
 
-    for x in queryset:
-        
-        d={}
-        d['department']=x.department.dept
-        d['year']=x.year
-        d['subject']=x.subject.subject
-        
-        file_list=[]
+    else:
+                             
+       subject_notes=queryset[0]
 
-        for f in x.files.all():
+       d={}
+       d['department']=subject_notes.department.dept
+       d['year']=subject_notes.year
+       d['subject']=subject_notes.subject.subject
 
-            file_list.append((f.files.url,f.image.url))
+       file_list=[]
 
-        d['files']=file_list
-         
-        l.append(d)
+       for f in subject_notes.files.all():
 
-        return render(request=request,template_name='notes/displaypdf.html',context={'mydata':l})
+           if f.files.name is '':
+               
+               return HttpResponseRedirect('warning/')
+                
 
-def pdf_view(request):
+           else:
 
-    pass
+              file_list.append((f.files.url,f.image.url))
+
+       d['files']=file_list
+
+
+       return render(request=request,template_name='notes/displaypdf.html',context={'mydata':d,'deptset':deptset})
+
+
+
+
+class InvalidRequest(TemplateView):
+
+    template_name='notes/warning_page.html'
+
+    def get_context_data(self,**kwargs):
+
+        context=super().get_context_data(**kwargs)
+
+        return context
+
+
+class Warning(TemplateView):
+
+    template_name='notes/warning.html'
+
+    def get_context_data(self,**kwargs):
+
+        context=super().get_context_data(**kwargs)
+
+        return context
+
+
+    
     
     
 

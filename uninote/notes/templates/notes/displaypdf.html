@@ -5,20 +5,20 @@
 <div class='container container-fluid'>
 
 <div  class='row'>
-{% for x in mydata  %}
-{% for p,i in x.files %}
+{% for p,i in mydata.files %}
 
-<div class='col-sm-3' style='text-align:center;padding:30px'>
+<div class='col-sm-4' style='text-align:center;padding:30px;'>
 
 
-<img src='{{i}}' alt='image' width="250px" height="300px" style='margin-bottom:30px;'>
 
-<p><a class='download' href='{{p}}'><span style='margin-right:5px;' class='glyphicon glyphicon-download-alt'></span>Download</a></p>
+<img src='{{i}}' alt='image' width='250px' height='300px' style='margin-bottom:10px;border:2px solid white;border-radius:2px;'>
+
+<p><a class='download' href='{{p}}'><span style='margin-right:5px;' class='glyphicon glyphicon-download-alt'></span>Open</a></p>
+
 
 
 </div>
 
-{% endfor %}
 {% endfor %}
 </div>
 
