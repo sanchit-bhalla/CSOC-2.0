@@ -27,6 +27,7 @@ urlpatterns = [
     re_path(r'^register_app/',include('django.contrib.auth.urls')),
     re_path(r'^about/', views.About.as_view(),name='about'),
     re_path(r'^discussions/', views.Discussions.as_view(),name='discussions'),
+    re_path(r'^ask/', views.Ask,name='ask'),
     re_path(r'^test/$',views.Test.as_view(),name='test'),
     re_path(r'^thanks/$',views.Thanks.as_view(),name='thanks'),
     re_path(r'^response/$',views.Response.as_view(),name='response'),

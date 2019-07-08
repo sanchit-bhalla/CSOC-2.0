@@ -92,6 +92,7 @@
 
                   <!-- content on right side -->
                   <ul class="nav navbar-nav navbar-right">
+                    <li><a class="colorwhite" href="{% url 'ask' %}">Just Ask!</a></li>
                       <li><a class="colorwhite" href="{% url 'discussions' %}">Discussions</a></li>
                       <li><a class="colorwhite" href="{% url 'about' %}">About</a></li>
                       <li><a href="#" class="colorwhite">Help</a></li>
@@ -100,8 +101,7 @@
                       {% if user.is_authenticated %}
                         <li><a class="colorwhite" href="{% url 'register_app:logout' %}">Logout</a></li>
                       {% else %}
-                        <li><a class="colorwhite" href="{% url 'register_app:login' %}">Login</a></li>
-                        <li><a class="colorwhite" href="{% url 'register_app:signup' %}">SignUp</a></li>
+                        <li><a class="colorwhite" href="{% url 'register_app:login' %}">Login/SignUp</a></li>
                       {% endif %}
                   </ul>
 

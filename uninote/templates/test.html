@@ -1,9 +1,20 @@
 {% extends 'base.html' %}
 {% block body_block %}
-<div class="jumbotron">
-  <div class="signupbottom">
-    <h1>You are now logged in!</h1>
+
+<div class="container">
+  <div style="margin-top: 5%; margin-bottom: 5%">
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8" style="background-color: white; height: 400px; border-radius: 15px;text-align: center;box-shadow: 7px 7px 3px #254E58">
+        <div class="signupbottom">
+          <h1 style="text-shadow: 2px 2px 5px dodgerblue; font-size: 65px">You are now logged in!</h1>
+        </div>
+        <div style="margin-top: 15%">
+          <a class="btn btn-lg btn-primary" href="{% url 'homepage' %}">
+            <span class="glyphicon glyphicon-ok"></span> ok</a>
+        </div>
+        </div>
+      </div>
+    </div>
   </div>
-<a class="btn btn-lg btn-primary" href="{% url 'homepage' %}">close</a>
-</div>
 {% endblock %}

@@ -8,10 +8,10 @@
 
 .signupbottom{
   margin-bottom: 50px;
+  margin-top: 50px;
 }
-
-/* credit goes to https://codepen.io/jamesbarnett/pen/vlpkh */
-/****** Style Star Rating Widget *****/
+ /* credit goes to https://codepen.io/jamesbarnett/pen/vlpkh  */
+ /* Style Star Rating Widget  */
 .rating {
   border: none;
   float: left;
