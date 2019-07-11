@@ -1,20 +1,36 @@
 {% extends 'notes/header.html' %}
-
+{% load static %}
 {% block body_block %}
-<div class='jumbotron jumbotron-fluid'>
-<div class='container container-fluid'>
-<div  class='row'>
-{% for x in deptset %}
-<div class='col-sm-4 dept'>
+<div class='notes-gallery'>
+<div class='container'>
 
-<h3 class='dept_head'>{{x.dept}}</h3>
+<div class='notes-gallery-grid'>
+<h3 class='agile' style='font-family:Alegreya,serif;'>Notes</h3>
 
-
-<div class='row' style='margin-top:30px;'>
-<div class='col-sm-4'></div>
-<div class='col-sm-4'><button  type='button'  class='dept_button'><a class='dept_link' href='{% url "notes:getnotes" %}?dept={{x.dept}}' class='a1'>Notes</a><span class='glyphicon glyphicon-chevron-right'></span></button></div>
-<div class='col-sm-4'></div>
 </div>
+
+<div class='row'>
+{% for x in deptset %}
+<div class='col-sm-4 notesa'>
+
+<div class='notesaThumbnail'>
+<div class='notesaThumbnailHover'>
+<h4>{{x.dept}}</h4>
+</div>
+<img src="{% static 'notes/images/notes.jpg' %}" alt='image' class='img-responsive'> 
+</div>
+
+<div class='getnotes'>
+<div class='getnotesclose'>
+<button class='closebutton'><img src="{% static 'notes/images/cross.png' %}" alt='cross'></button>
+</div>
+<h4>Get all your notes subject and year wise</h4>
+<a href='#'>GET NOTES <span class='glyphicon glyphicon-menu-right '></span></a>
+</div>
+
+
+
+
 
 </div>
 {% endfor %}

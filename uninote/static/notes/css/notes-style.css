@@ -1,0 +1,316 @@
+html, body{
+    font-size: 100%;
+	font-family: 'Open Sans', sans-serif;
+	background:#ffffff;
+	margin: 0;
+}
+p,ul li,ol li{
+	margin:0;
+	font-size:14px;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Alegreya', serif;
+	margin:0;
+}
+ul,label{
+	margin:0;
+	padding:0;
+}
+body a:hover{
+	text-decoration:none;
+}
+
+
+
+.notes-header{
+	
+	position:relative;
+	
+}
+
+.uniphoto{
+	
+	background:url('../images/gndu.jpg') no-repeat 0px 0px;
+	background-size:cover;
+	min-height:300px;
+	position:relative;
+	opacity:0.5;
+	
+	
+}
+
+/*__navbar__*/
+
+.notes-header>.container>.navbar {
+    border-radius: 0;
+}
+.notes-header>.container>.navbar {
+    margin-bottom: 0;
+}
+.notes-header>.container>.navbar-default {
+    background-color: #fff;
+    border: none;
+    padding: 1em 0;
+}
+
+.notes-header>.container>.navbar-default>.navbar-header>.logo-container {
+    padding-right: 40px;
+}
+.notes-header>.container>.navbar-default>.navbar-header>.logo-container>.navbar-brand {
+    padding:0px;
+    font-size:2.5em;
+    line-height: 36px;
+	font-weight:600;
+    text-transform: uppercase;
+	
+}
+
+/*.notes-header>.container>.navbar-default>.navbar-header>.logo-container>.navbar-brand span{
+    display: inline-block;
+    padding: .2em .4em;
+    background: #02B875;
+    color: #fff;
+    border-radius: 50px;
+}*/
+
+.notes-header>.container>.navbar-default>.navbar-header>.logo-container>.navbar-brand,.notes-header>.container>.navbar-default>.navbar-header>.logo-container>.navbar-brand:hover, .notes-header>.container>.navbar-default>.navbar-header>.logo-container>.navbar-brand:focus {
+    color: #02B875;
+}
+
+.notes-header>.container>.navbar-default>.navbar-collapse {
+    padding: 0;
+}
+
+
+.notes-header>.container>.navbar-default>.navbar-right {
+    float:none !important;
+    margin-right: 0;
+}
+
+.notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav {
+    padding: 0.5em 0 0 0.5em;
+}
+
+
+.notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav>.open > a, .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav>.open > a:hover, .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav>.open > a::focus {
+    background-color: transparent;
+}
+
+
+.notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav >.dropdown>.dropdown-menu {
+    border-radius: 0;
+	background: #ffffff;
+	text-align: center;
+	padding: 0;
+	border: none;
+	
+}
+
+.notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav >.dropdown>.dropdown-menu>li>a{
+	
+	text-transform: uppercase;
+	color: #02B875;
+	font-size: 12px;
+	font-weight: 600;
+	padding: .8em 0;
+	border-bottom: 1px solid #ececef;
+	
+}
+
+
+.notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav > li > a {
+    
+	padding:0 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.8em;
+	margin: 0 0px;
+	color:#000;
+}
+
+.notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav >.dropdown>.dropdown-menu>li>a:hover {
+	
+	color: #fff;
+	text-decoration: none;
+	background-color: #02B875;
+    
+	
+}
+
+.notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav > .active > a, .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav > .active > a:hover, .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav > .active > a:focus {
+    color:#02B875;
+    background-color: transparent;
+}
+
+.notes-gallery{
+	
+	padding:5em 0;
+	
+	
+}
+
+.notes-gallery>.container>.notes-gallery-grid>.agile{
+	
+	font-size:40px;
+	color:#02B875;
+	text-transform:capitalize;
+	text-align:center;
+	font-weight:600;
+	margin-bottom:50px;
+	
+	
+}
+
+.notes-gallery>.container>.row>.notesa{
+	
+	margin-bottom:30px;
+	position:relative;
+	
+}
+
+.notes-gallery>.container>.row>.notesa>.notesaThumbnail,.getnotes{
+	
+	max-width:100%;
+	height:100%;
+	position:relative;
+	
+}
+.notes-gallery>.container>.row>.notesa>.notesaThumbnail>.notesaThumbnailHover{
+	
+	background-color:rgba(5,34,42,0.69);
+	position:absolute;
+	width:100%;
+	text-align:center;
+	top:0px;
+	bottom:0px;
+	opacity:0;
+	z-index:10;
+	transition:opacity 0.5s linear;
+	
+	
+	
+}
+
+.notes-gallery>.container>.row>.notesa>.notesaThumbnail img{
+	
+	display:block;
+	height:auto;
+	max-width:100%;
+	opacity:1;
+	transition:opacity 0.5s linear;
+	
+}
+
+.notes-gallery>.container>.row>.notesa>.notesaThumbnail>.notesaThumbnailHover h4{
+	
+	font-size:30px;;
+	color: #fff;
+	font-family:Alegreya,serif;
+	transition:transform 0.5s linear;
+	
+	
+}
+
+.notes-gallery>.container>.row>.notesa>.notesaThumbnail:hover .notesaThumbnailHover{
+	
+	opacity:1;
+}
+
+
+.notes-gallery>.container>.row>.notesa>.notesaThumbnail:hover .notesaThumbnailHover h4{
+	
+	transform:translate(0px,140px);
+	
+}
+
+
+.notes-gallery>.container>.row>.notesa>.notesaThumbnail:hover img{
+	
+	opacity:0.5;
+	
+}
+
+.notes-gallery>.container>.row>.notesa>.getnotes{
+	
+	display:none;
+	background-color:#05222A;
+	padding:1em 2em;
+	overflow:hidden;
+	height:150px;
+	position:relative;
+	
+	
+	
+}
+
+.notes-gallery>.container>.row>.notesa>.getnotes h4{
+	
+	color:#ffffff;
+	font-size:1.4em;
+	margin-top:0.8em;
+	font-weight:600;
+	
+	
+}
+
+.notes-gallery>.container>.row>.notesa>.getnotes>.getnotesclose{
+	
+	float:right;
+	
+}
+
+.notes-gallery>.container>.row>.notesa>.getnotes>.getnotesclose>.closebutton{
+	
+	background:none;
+	border:none;
+	outline:none;
+	
+}
+
+.notes-gallery>.container>.row>.notesa>.getnotes a{
+	
+	background-color:#B0DFE5;
+	position:absolute;
+	left:32%;
+	bottom:5px;
+	padding:15px;
+	font-weight:600;
+	border-radius:50%;
+	
+	
+}
+
+@keyframes blink{
+	
+	 from {opacity:1;}
+	
+	 to {opacity:0;}
+	
+	
+}
+
+.notes-gallery>.container>.row>.notesa>.getnotes a span{
+	
+	font-weight:600;
+	animation-name:blink;
+	animation-duration:0.8s;
+	animation-iteration-count:infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*//navbar//*/
