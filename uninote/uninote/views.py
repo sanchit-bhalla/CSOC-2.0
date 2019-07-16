@@ -32,6 +32,7 @@ operations = {"sign up":'register_app:signup',"signup":'register_app:signup',
             "discussionform":'discussions',"q and a form":'discussions',"question and answer form":'discussions',
 
             "who create this":'about','creaters':'about','about this':'about',"open about":'about',"about page":'about',
+            'creator':'about',"creators":'about',
 
             "show groups":'groups:all',"groups page":'groups:all',"all groups":'groups:all',"group list":'groups:all',
             "gorups list":'groups:all',"gourp list":'groups:all',"question answer":'groups:all',"questions and answers":'groups:all',
@@ -41,8 +42,11 @@ operations = {"sign up":'register_app:signup',"signup":'register_app:signup',
 
             "create post":'posts:create',"create posts":'posts:create',"new post":'posts:create',"new posts":'posts:create',
             "question":'posts:create',"questions":'posts:create',"ask questions":'posts:create',"new question":'posts:create',
-            'problems':'posts:create',"confusion":'posts:create','query':'posts:create','queries':'posts:create',
-            'issue':'posts:create','issues':'posts:create','problem':'posts:create',
+            'problems':'posts:create',"confusion":'posts:create','query':'posts:create','queries':'posts:create','doubt':'posts:create',
+            'issue':'posts:create','issues':'posts:create','problem':'posts:create','doubts':'posts:crete',
+
+            "notes" : 'notes:homepage',"study material":'notes:homepage',"note":'notes:homepage',"departments":'notes:homepage',
+            "department":'notes:homepage',
 
             }
 def speak(audio):
@@ -66,7 +70,7 @@ def Ask(request):
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening....")
-        r.pause_threshold = 1  # You can change other parameters according to your requirements
+        # r.pause_threshold = 1  # You can change other parameters according to your requirements
         audio = r.listen(source)
     try:
         print("Recognising...")

@@ -1,37 +1,109 @@
 {% extends "groups/group_base.html" %}
 
 {% block pregroup %}
-<div class="col-md-4">
-	<div class="content">
-		{% if user.is_authenticated %}
-		<h2>
-			Welcome back
-			<a href="{% url 'posts:for_user' username=user.username %}">@{{user.username }}</a>
-		</h2>
-    {% endif %}
-	</div>
-</div>
-{% endblock pregroup %}
+  <div style="margin-top: 5%; margin-bottom: 5%">
+    {% if user.is_authenticated %}
+      <div class="row">
+        <div class="col-xs-12" style="background-color: white; box-shadow: 8px 8px 5px #254E58">
+          <div class="row">
+            <div class="col-xs-4" align="center" style="background-color:#254E58">
+              <h3><a href="{% url 'groups:create' %}" style="color: white"> <span class="glyphicon glyphicon-plus-sign" style="color: white"></span> Create Group</a></h3>
+            </div>
+            <div class="col-xs-4" align="center" style="background-color: white">
+              <h2><a href="{% url 'groups:all' %}" style="color: #254E58; text-shadow: 2px 2px 4px #254E58"><strong>Groups</strong></a></h2>
+            </div>
+            <div class="col-xs-4" align="center" style="background-color:#254E58">
+              <h3><a href="{% url 'posts:create' %}"  style="color: white">Ask Question</a></h3>
+            </div>
+          </div>
+					<div class="signupbottom">
+						<div class="row">
+							<div class="col-md-3 col-xs-12">
+								<div class="content">
+									{% if user.is_authenticated %}
+									<h2>
+										Welcome back
+										<a href="{% url 'posts:for_user' username=user.username %}">@{{user.username }}</a>
+									</h2>
+									{% endif %}
+								</div>
+							</div>
+							<div class="col-md-9 col-xs-12">
+								<div class="list-group">
+									{% for group in object_list %}
+										<a class="list-group-item" style="border: 1px solid #254E58" href="{% url 'groups:single' slug=group.slug %}">
+												 <h3 class="title list-group-item-heading">{{ group.name }}</h3>
+												<div class="list-group-item-text container-fluid">
+													{{ group.description_html|safe }}
+													<div class="row">
+														<div class="col-md-4">
+															<span class="badge">{{ group.members.count }}</span> member{{ group.members.count|pluralize }}
+														</div>
+														<div class="col-md-4">
+															<span class="badge">{{ group.posts.count }}</span> post{{ group.posts.count|pluralize }}
+														</div>
+													</div>
+												</div>
+										</a>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+          </div>
+          </div>
+        </div>
+      {% else %}
+      <div class="row">
+        <div class="col-xs-12" style="background-color: white; box-shadow: 8px 8px 5px #254E58">
+          <div class="row">
+            <div class="col-xs-4" align="center" style="background-color:#254E58">
+              <h3><a href="{% url 'register_app:login' %}" style="color: white">Create Group <span class="glyphicon glyphicon-plus-sign"></span></a></h3>
+            </div>
+						<div class="col-xs-4" align="center" style="background-color: white">
+              <h2><a href="{% url 'groups:all' %}" style="color: #254E58; text-shadow: 2px 2px 4px #254E58">Groups</a></h2>
+            </div>
+            <div class="col-xs-4" align="center" style="background-color:#254E58">
+              <h3><a href="{% url 'register_app:login' %}" style="color: white">Ask Question</a></h3>
+            </div>
+          </div>
+          <div class="signupbottom">
+						<div class="row">
+							<div class="col-md-3 col-xs-12">
+								<div class="content">
+									{% if user.is_authenticated %}
+									<h2>
+										Welcome back
+										<a href="{% url 'posts:for_user' username=user.username %}">@{{user.username }}</a>
+									</h2>
+									{% endif %}
+								</div>
+							</div>
+							<div class="col-md-9 col-xs-12">
+								<div class="list-group">
+									{% for group in object_list %}
+										<a class="list-group-item" style="border: 1px solid #254E58" href="{% url 'groups:single' slug=group.slug %}">
+												 <h3 class="title list-group-item-heading">{{ group.name }}</h3>
+												<div class="list-group-item-text container-fluid">
+													{{ group.description_html|safe }}
+													<div class="row">
+														<div class="col-md-4">
+															<span class="badge">{{ group.members.count }}</span> member{{ group.members.count|pluralize }}
+														</div>
+														<div class="col-md-4">
+															<span class="badge">{{ group.posts.count }}</span> post{{ group.posts.count|pluralize }}
+														</div>
+													</div>
+												</div>
+										</a>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+          </div>
+          </div>
+        </div>
+      {% endif %}
 
-{% block group_content %}
-<div class="col-md-8">
-	<div class="list-group">
-		{% for group in object_list %}
-		  <a class="list-group-item" href="{% url 'groups:single' slug=group.slug %}">
-			     <h3 class="title list-group-item-heading">{{ group.name }}</h3>
-    			<div class="list-group-item-text container-fluid">
-    				{{ group.description_html|safe }}
-    				<div class="row">
-    					<div class="col-md-4">
-    						<span class="badge">{{ group.members.count }}</span> member{{ group.members.count|pluralize }}
-    					</div>
-    					<div class="col-md-4">
-    						<span class="badge">{{ group.posts.count }}</span> posts{{ group.posts.count|pluralize }}
-    					</div>
-    				</div>
-    			</div>
-  		</a>
-		{% endfor %}
-	</div>
-</div>
-{% endblock %}
+
+    </div>
+{% endblock pregroup %}
