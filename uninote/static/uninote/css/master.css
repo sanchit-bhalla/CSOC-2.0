@@ -5,6 +5,10 @@
   border: 1px solid black;
   margin: 30px;
 }
+.space {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
 .signupbottom{
   margin-bottom: 50px;

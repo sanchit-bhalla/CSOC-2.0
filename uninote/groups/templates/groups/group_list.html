@@ -32,7 +32,7 @@
 								<div class="list-group">
 									{% for group in object_list %}
 										<a class="list-group-item" style="border: 1px solid #254E58" href="{% url 'groups:single' slug=group.slug %}">
-												 <h3 class="title list-group-item-heading">{{ group.name }}</h3>
+												<h3 class="title list-group-item-heading">{{ group.name }}</h3>
 												<div class="list-group-item-text container-fluid">
 													{{ group.description_html|safe }}
 													<div class="row">

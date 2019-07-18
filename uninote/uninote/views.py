@@ -37,6 +37,13 @@ operations = {"sign up":'register_app:signup',"signup":'register_app:signup',
             "show groups":'groups:all',"groups page":'groups:all',"all groups":'groups:all',"group list":'groups:all',
             "gorups list":'groups:all',"gourp list":'groups:all',"question answer":'groups:all',"questions and answers":'groups:all',
 
+            "notes" : 'notes:homepage',"study material":'notes:homepage',"note":'notes:homepage',"departments":'notes:homepage',
+            "department":'notes:homepage',
+
+            }
+
+#  Operations for which login is necessary
+login_operations = {
             "create group":'groups:create',"create groups":'groups:create',"new group":'groups:create',"new goups":'groups:create',
             "create a group":'groups:create',
 
@@ -45,10 +52,7 @@ operations = {"sign up":'register_app:signup',"signup":'register_app:signup',
             'problems':'posts:create',"confusion":'posts:create','query':'posts:create','queries':'posts:create','doubt':'posts:create',
             'issue':'posts:create','issues':'posts:create','problem':'posts:create','doubts':'posts:crete',
 
-            "notes" : 'notes:homepage',"study material":'notes:homepage',"note":'notes:homepage',"departments":'notes:homepage',
-            "department":'notes:homepage',
-
-            }
+}
 def speak(audio):
     engine = pyttsx3.init('sapi5')  # sapi5 is used for voices
     voices = engine.getProperty('voices')
@@ -82,9 +86,18 @@ def Ask(request):
     except Exception as e:
         print(e)
         speak("Say that again please ...")
+        return redirect("homepage")
 
     else:
         for k in operations:
             if k in query:
                 return redirect(operations[k])
+
+        for k in login_operations:
+            if k in query:
+                if request.user.is_authenticated:
+                    return redirect(login_operations[k])
+                else:
+                    speak("You need to login for that")
+                    return redirect('register_app:login')
         return redirect("homepage")

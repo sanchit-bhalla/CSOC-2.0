@@ -1,53 +1,60 @@
 {% extends "posts/post_base.html" %}
 {% block post_content %}
-<div class="col-xs-10">
-  <div class="post media">
-    <h3><strong>{{ post.message_html|safe }}</strong></h3>
-    <div class="row">
-      <div class="col-xs-10">
-        <h4 class="media-heading">
-          <span class="username"><a href="{% url 'posts:for_user' username=post.user.username %}">by @{{ post.user.username }}</a></span>
-          {{ post.created_at }}
-          {% if post.group %}
-            <span class="group-name">in <a href="#">{{ post.group.name }}</a></span>
-          {% endif %}
-        </h4>
+
+<div style="margin-top: 5%; margin-bottom: 5%">
+  <div class="row">
+    <div class="col-xs-12" style="background-color: white; box-shadow: 8px 8px 5px #254E58">
+      <div class="row container">
+        <div class="col-xs-12">
+          <h3><strong>{{ post.message_html|safe }}</strong></h3>
         </div>
-        {% if user.is_authenticated %}
-        <a class="btn btn-primary btn-comment" href="{% url 'posts:add_comment_to_post' pk=post.pk %}">Add comment</a>
-        {% endif %}
-    </div>
+        <div class="row">
+          <div class="col-xs-7">
+            <h4 class="media-heading">
+              <span class="username"><a href="{% url 'posts:for_user' username=post.user.username %}">by @{{ post.user.username }}</a></span>
+              {{ post.created_at }}
+              {% if post.group %}
+                <span class="group-name">in <a href="#">{{ post.group.name }}</a></span>
+              {% endif %}
+            </h4>
+          </div>
+          <div class="col-xs-4">
+            {% if user.is_authenticated %}
+            <a class="btn btn-primary btn-comment" href="{% url 'posts:add_comment_to_post' pk=post.pk %}">Add comment</a>
+            {% endif %}
+          </div>
+        </div>
+          <div class="media-footer">
+            {% if user.is_authenticated and post.user == user and not hide_delete %}
+                <a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-simple">
+                  <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
+                  <span class="text-danger icon-label">Delete post</span>
+                </a>
+            {% endif %}
+          </div>
+          <br>
+          <div class="col-xs-12">
+            <h3><em>Replies: </em></h3>
+          </div>
+          <div class="row space">
+            <div class="col-xs-12">
+              {% for comment in post.comments.all %}
+              <div  style="margin-bottom: 25px; margin-left: 60px">
+                <h3>{{ comment.message|safe|linebreaks }}</h3>
+                <h5>Reply by:{{ comment.username }} on {{ comment.created_at }}</h5>
+              </div>
+              {% empty %}
+                  <h4>No comments posted.</h4>
+              <br>
+              {% endfor %}
+             </div>
+          </div>
 
-    <div class="media-footer">
-      {% if user.is_authenticated and post.user == user and not hide_delete %}
-          <a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-simple">
-            <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
-            <span class="text-danger icon-label">Delete post</span>
-          </a>
-      {% endif %}
+
+      <!-- </div> -->
+
+      </div>
     </div>
   </div>
-  <hr>
-</div>
-{% endblock %}
 
-{% block post_post %}
-<div class="col-xs-10">
-  <div class="comment_border">
-  {% for comment in post.comments.all %}
-  <br>
-  <h4>{{ comment.message|safe|linebreaks }}</h4>
-  <h6>Reply by:{{ comment.username }} on {{ comment.created_at }}</h6>
-  <!-- {% if user.is_authenticated and comment.user.username == username and not hide_delete %}
-      <a href="{% url 'posts:comment_remove' pk=comment.pk %}" title="delete" class="btn btn-simple">
-        <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
-        <span class="text-danger icon-label">Delete comment</span>
-      </a>
-  {% endif %} -->
-  {% empty %}
-      <h4>No comments posted.</h4>
-  {% endfor %}
-  <br>
-  </div>
- </div>
 {% endblock %}

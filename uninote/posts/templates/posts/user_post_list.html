@@ -1,15 +1,19 @@
 {% extends "posts/post_base.html" %}
-
 {% block prepost %}
-<div class="row">
-	<div class="col-xs-4">
-		<h1>@{{ post_user.username }}</h1>
+<div style="margin-top: 5%; margin-bottom: 5%">
+	<div class="row">
+		<div class="col-xs-12" style="background-color: white; box-shadow: 8px 8px 5px #254E58">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1>@{{ post_user.username }}</h1>
+				</div>
+			</div>
+					{% for post in post_list %}
+						{% include "posts/_post.html" %}
+						{% empty %}
+								<h2>No post yet!</h2>
+					{% endfor %}
+			</div>
+		</div>
 	</div>
-</div>
-{% endblock %}
-
-{% block post_content %}
-	{% for post in post_list %}
-		{% include "posts/_post.html" %}
-	{% endfor %}
 {% endblock %}
