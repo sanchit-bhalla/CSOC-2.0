@@ -2,7 +2,14 @@
 # Requirements
 Any python 3 version. However pythnon 3.7 is recommended.
 Once you have successfully installed python  then in your cmd write following commands to install various modules 
-- 
+- pip install django==2.2.2
+- pip install bcrypt
+- pip install django[argon2]
+- pip install django-bootstrap3
+- pip install django-braces
+- pip install misaka
+- pip install pillow
+- pip install pyttsx3
 # Working using cmd
 ### Follow the steps below
 - Download the zip.
