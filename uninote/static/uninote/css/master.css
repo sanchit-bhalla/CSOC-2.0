@@ -53,13 +53,10 @@
 
 #centerrow {
   position: absolute;
-  /* width: 300px;
-  height: 200px; */
   z-index: 15;
   top: 50%;
   left: 50%;
   margin: -100px 0 0 -150px;
-  /* background: red; */
 }
 
 /* add space b/w icons  */
@@ -132,43 +129,6 @@ body{
   color: black;
   font-family: 'Montserrat';
   font-size: 1.5em;
-}
-/* FLIP CARD */
-.flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-/* POSITION BACK AND FRONT*/
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  /* text-align: center; */
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* FLIP WHEN MOUSE HOVERS */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  margin: 0px;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-/* Style the back side */
-.flip-card-back {
-  background-color: #112D32;
-  color: white;
-  transform: rotateY(180deg);
 }
 /* TO MOVE CONTENT ON BACK SIDE TO MIDDLE */
 .middle{

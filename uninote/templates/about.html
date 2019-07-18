@@ -1,58 +1,121 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block body_block %}
-<!-- <style media="screen">
-  .boxy{
-    padding: 5px;
-  }
-  .extnd{
-    width: 100%;
-  }
-</style> -->
 
-  <div class="textcontent">
-    <h1><strong>About Uninote!</strong></h1>
-    <p><em>text goes here</em></p>
-  </div>
-  <div class="textcontent">
-    <h1><strong>Creaters</strong></h1>
-  </div>
-  <div class="row">
-
-    <div class="col-md-6 col-sm-12 boxy">
-      <img class="img-thumbnail img-fluid extnd" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
+<div class="row" style="margin-bottom: 100px">
+  <div class="col-xs-12">
+    <div class="row mySlides" style="background-color:#254E58; color:white">
+      <div class="col-xs-12" align="center">
+        <h2><strong>Notes</strong></h2>
+      </div>
+      <img src="{% static 'pics/notes.jpg' %}" style="width:100%; height: 400px">
     </div>
 
-    <div class="col-md-6 col-sm-12 boxy">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img class="img-thumbnail img-fluid extnd" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
+    <div class="row mySlides" style="background-color:#254E58; color:white">
+      <div class="col-xs-12" align="center">
+        <h2><strong>Previous Papers</strong></h2>
+      </div>
+      <img src="{% static 'pics/prev_paper.png' %}" style="width:100%; height: 400px">
+    </div>
+
+    <div class="row mySlides" style="background-color:#254E58; color:white">
+      <div class="col-xs-12" align="center">
+        <h2><strong>Groups</strong></h2>
+      </div>
+      <img src="{% static 'pics/rafale3.jpg' %}" style="width:100%; height: 400px">
+    </div>
+  </div>
+</div>
+
+  <div style="margin-bottom: 5%">
+    <div class="row">
+      <div class="col-xs-12" style="background-color: white; box-shadow: 8px 8px 5px #254E58">
+        <div class="row" style="background-color:#254E58">
+          <div class="col-xs-12" align="center">
+            <h2 style="color: white"><strong>Creaters</strong></h2>
           </div>
-          <div class="flip-card-back">
-            <div class="middle">
-                <p>Sanchit</p>
-                <p>Web Developer</p>
-                <p>
-                  <a href="#" class="fa fa-facebook"></a>
-                  <a href="#" class="fa fa-twitter"></a>
-                  <a href="#" class="fa fa-instagram"></a>
-                </p>
+        </div>
+        <div class="row" style="margin-top: 50px">
+          <div class="col-md-1 col-xs-12"></div>
+          <div class="col-md-5 col-xs-12">
+            <div style="background-color: #254E58; color: white; border-radius: 10px;">
+              <img style="width: 100%; border-radius: 10px" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
+              <div class="middle">
+                  <p>Piyush Khanna</p>
+                  <p>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                  </p>
+              </div>
             </div>
           </div>
+
+          <div class="col-md-5 col-xs-12">
+            <div style="background-color: #254E58; color: white; border-radius: 10px;">
+              <img style="width: 100%; border-radius: 10px" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
+              <div class="middle">
+                  <p>Sadkirat Singh</p>
+                  <p>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                  </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1 col-xs-12"></div>
+        </div>
+
+        <div class="row" style="margin-top: 30px; margin-bottom: 50px">
+          <div class="col-md-1 col-xs-12"></div>
+          <div class="col-md-5 col-xs-12">
+            <div style="background-color: #254E58; color: white; border-radius: 10px;">
+              <img style="width: 100%; border-radius: 10px" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
+              <div class="middle">
+                  <p>Sanchit Bhalla</p>
+                  <p>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                  </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 col-xs-12">
+            <div style="background-color: #254E58; color: white; border-radius: 10px;">
+              <img style="width: 100%; border-radius: 10px" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
+              <div class="middle">
+                  <p>Sahil Mehra</p>
+                  <p>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         </div>
       </div>
     </div>
 
-    <div class="col-md-6 col-sm-12 boxy">
-      <img class="img-thumbnail img-fluid extnd" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
-    </div>
+    <script>
+      var myIndex = 0;
+      carousel();
 
-    <div class="col-md-6 col-sm-12 boxy">
-      <img class="img-thumbnail img-fluid extnd" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
-    </div>
-
-
-    </div>
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+      }
+    </script>
 
     {% endblock %}
