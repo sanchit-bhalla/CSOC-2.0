@@ -2,7 +2,7 @@
 {% load staticfiles %}
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' charset="utf-8">
     <title>Navbar</title>
 	
 	
@@ -107,16 +107,15 @@
 			   
 			                <div class='icon'>
 							<a class="search-icon" href="#search-icon"> <span class='glyphicon glyphicon-search'></span></a>
-							</div>	
-							<div class="form-search">
+						
+							<div class='form-search'>
 								<form method='get' action='{% url "notes:getnotes" %}'>
 									<input type="search" placeholder="Search..." name='dept'>
 								</form>
-							</div>
-				
-				<div class='clearfix'></div>		
+				            </div>
+                            </div>							
+			  
 			   </div>
-			   
 			</nav>
 		
 		  </div>
@@ -185,7 +184,7 @@
 
 <div class='social-media-icons'>
 
-<span style='color:white;margin-left:3px;'>Stay Connected:</span>
+<span class='sc' style='color:white;margin-left:3px;'>Stay Connected:</span>
 
 <a href='#' class='fa fa-facebook'></a>
 <a href="#" class="fa fa-twitter"></a>
@@ -193,9 +192,9 @@
 <a href="#" class="fa fa-linkedin"></a>
 <a href="#" class="fa fa-instagram"></a>
 
-<span style='margin-right:0px;position:absolute;right:0px;top:10px;color:white;'>All Rights Reserved.</span>
-
 </div>
+
+<span class='arr'>All Rights Reserved.</span>;
 
 </div>
 
