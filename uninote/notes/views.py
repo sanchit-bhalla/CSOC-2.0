@@ -7,6 +7,13 @@ from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseNotFound,HttpResponseRedirect
 from django.views.generic.base import TemplateView
 
+from django.template.defaulttags import register
+
+@register.filter
+def get_range(value):
+
+    return range()
+
 
 deptset=Departments.objects.all()
 
@@ -17,9 +24,40 @@ def homepage(request):
 
     
     deptset=Departments.objects.all()
-    return render(request=request,template_name='notes/home.html',context={'deptset':deptset})
+
+    
+    form=GetNotes(auto_id=True)
+    return render(request=request,template_name='notes/home.html',context={'deptset_range':zip(deptset,list(range(len(deptset)))),'form':form})
+    #return render(request=request,template_name='notes/home.html',context={'deptset':deptset,'form':form})
 
 
+def department(request):
+
+    department=request.GET['dept']
+
+    flag=0
+
+    for x in Departments.objects.all():
+
+        if x.dept==department:
+
+            flag=1
+
+            break
+
+    if flag==0:
+
+            d={}
+            d['dept']=department
+            return JsonResponse(d)
+
+    else:
+
+        return HttpResponseRedirect('/invalid')
+
+    
+
+    
 def getnotes(request):
 
     global deptset

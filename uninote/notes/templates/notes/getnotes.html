@@ -4,63 +4,20 @@
 {% block body_block %}
 {% load static %}
 <br>
-<script>
-/*function disnotes(){
-	
-	
-	
-	var department=document.getElementById('department').value;
-	var year=document.getElementById('year').value;
-	var subject=document.getElementById('subject').value;
-	
-	
-	var xhttp=new XMLHttpRequest();
-	xhttp.onreadystatechange=function(){
-		
-		if(this.readyState==4 & this.status==200){
-			
-			var obj=JSON.parse(this.responseText);
-			console.log(JSON.stringify(obj));
-			console.log(obj[0].department);
-			console.log({{MEDIA_ROOT}}obj[0].files[0])
-			var s1='media/files/Rings.Pdf'
-			var s=''
-			s=s+'<embed src=s1 type="application/pdf" width="400px" height="400px"></embed>'
-		    s=s+'<p>'+obj[0].department+'</p>';
-			s=s+'<p>'+obj[0].subject+'</p>';
-			s=s+'<p>'+obj[0].year+'</p>';
-			
-			
-			
-			document.getElementById('demo').innerHTML=s;
-			
-			
-			
-			
-		}
-		
-		
-	};
-	
-	xhttp.open('GET','displaynotes?year='+year+'&subject='+subject+'&department='+department,true);
-	xhttp.send();
-	
-	
-*/
-</script>
 
-<div class='jumbotron jumbotron-fluid'>
 
-<div class='container container-fluid'>
+<div class='jumbotron' style='background-color:transparent;'>
 
-<div class='row'>
+<div class='notes-container'>
+
+<!--<div class='row'>
 
 <div class='col-sm-4'></div>
 
 <div class='col-sm-4'>
 
 <!---Flip Card-->
-<div class='flip-card'>
+<!--<div class='flip-card'>
  <div class='flip-card-inner'>
  
  
@@ -80,18 +37,17 @@
 </div>
 <!---Flip Card-->
 
-</div>
+<!--</div>
 <div class='col-sm-4'></div>
 
-</div>
+</div>-->
 
-<br><br>
 <form method='get' action='{% url "notes:displaynotes" %}' >
 
 {{form.as_p}}
 
 <br>
-<input type='submit' value='submit' class='getnotesbutton'>
+<button type='submit' value='submit' class='getnotesbutton'>submit</button>
 </form>
 
 </div>

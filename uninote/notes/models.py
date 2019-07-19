@@ -7,6 +7,7 @@ class Departments(models.Model):
     
     dept=models.CharField(max_length=100,primary_key=True)
     HOD=models.CharField(max_length=100,blank=True,null=True)
+    image=models.ImageField(upload_to='myimages',null=True,blank=True)
 
     class Meta:
 

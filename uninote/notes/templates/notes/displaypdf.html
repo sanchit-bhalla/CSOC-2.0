@@ -1,19 +1,19 @@
 {% extends 'notes/header.html' %}
 
 {% block body_block %}
-<div class='jumbotron jumbotron-fluid'>
-<div class='container container-fluid'>
+<div class='jumbotron jumbotron-fluid' style='background-color:transparent'>
+<div class='container container-fluid' style='background-color:#ffffff'>
 
 <div  class='row'>
 {% for p,i in mydata.files %}
 
-<div class='col-sm-4' style='text-align:center;padding:30px;'>
+<div class='col-sm-3' style='text-align:center;padding:30px;'>
 
 
 
-<img src='{{i}}' alt='image' width='250px' height='300px' style='margin-bottom:10px;border:2px solid white;border-radius:2px;'>
+<img src='{{i}}' alt='image' width='250px' height='300px' style='margin-bottom:10px;border:2px solid black;border-radius:2px;'>
 
-<p><a class='download' href='{{p}}'><span style='margin-right:5px;' class='glyphicon glyphicon-download-alt'></span>Open</a></p>
+<p><a class='download' style='background-color:#588BAE;color:white;padding:10px 20px;' href='{{p}}'><span style='margin-right:5px;color:white;' class='glyphicon glyphicon-download-alt'></span>Open</a></p>
 
 
 
