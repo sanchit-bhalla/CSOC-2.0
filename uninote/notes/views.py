@@ -27,7 +27,7 @@ def homepage(request):
 
     
     form=GetNotes(auto_id=True)
-    return render(request=request,template_name='notes/home.html',context={'deptset_range':zip(deptset,list(range(len(deptset)))),'form':form})
+    return render(request=request,template_name='notes/home.html',context={'deptset_range':list(zip(deptset,list(range(len(deptset))))),'form':form})
     #return render(request=request,template_name='notes/home.html',context={'deptset':deptset,'form':form})
 
 
