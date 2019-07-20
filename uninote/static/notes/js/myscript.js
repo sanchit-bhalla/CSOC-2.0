@@ -1,4 +1,10 @@
+window.onload=function(){
+	
+	$('.se-pre-con').fadeOut(2000);
+};
+
 $(document).ready(function(){
+
 
 var a=document.querySelectorAll('.rowa');
 console.log(a)
@@ -119,13 +125,6 @@ $('.notes-header').find('span').click(function(){
 	
 	
 });
-
-$('.notes-header').find('.dropdown-toggle').click(function(){
-	
-	$(this).find('.dropdown-menu').slideToggle();
-
-});
-
 
 
 });
