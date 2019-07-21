@@ -28,7 +28,7 @@ class Post(models.Model):
 
     class Meta():
         ordering = ['-created_at']
-        unique_together = ['user','message']
+        #unique_together = ['user','message']
 
 class Comment(models.Model):
     post = models.ForeignKey('posts.Post',related_name="comments",on_delete=models.CASCADE)

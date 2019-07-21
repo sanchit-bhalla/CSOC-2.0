@@ -6,43 +6,88 @@
 <div class="container">
   <div style="margin-top: 5%; margin-bottom: 5%">
     {% if user.is_authenticated %}
+      
       <div class="row">
-        <div class="col-xs-12" style="background-color: white; box-shadow: 8px 8px 5px #254E58">
-          <div class="row" style="background-color:#254E58">
-            <div class="col-xs-4" align="center">
+
+        <div class="col-md-3 col-xs-12">
+          <div class="row" style="border: 2px solid #4de2fa; background-color: white; height: 300px">
+            <div class="col-xs-12" align="center" style="background-color:#4de2fa; border: 2px solid #4de2fa">
               <h3><a href="{% url 'groups:create' %}" style="color: white"> <span class="glyphicon glyphicon-plus-sign" style="color: white"></span> Create Group</a></h3>
             </div>
-            <div class="col-xs-4" align="center">
-              <h3><a href="{% url 'groups:all' %}" style="color: white">Groups</a></h3>
+            <div style="margin-top: 100px" align="center">
+              <p style="text-shadow: 2px 2px 4px #4de2fa; font-size: 2em">Create new group and start discussion</p>
             </div>
-            <div class="col-xs-4" align="center">
-              <h3><a href="{% url 'posts:create' %}"  style="color: white">Ask Question</a></h3>
-            </div>
-          </div>
-          <div class="signupbottom">
-            <h3 style="text-shadow: 2px 2px 5px dodgerblue; font-size: 40px">Ask your questions in relevant group for quick answers</h3>
-          </div>
           </div>
         </div>
+
+        <div class="col-md-1 col-xs-12"></div>
+
+        <div class="col-md-3 col-xs-12">
+          <div class="row" style="border: 2px solid #4de2fa; background-color: white;height: 300px">
+            <div class="col-xs-12" align="center" style="background-color:#4de2fa; border: 2px solid #4de2fa">
+              <h3><a href="{% url 'groups:all' %}" style="color: white">Groups</a></h3>
+            </div>
+            <div style="margin-top: 100px" align="center">
+              <p style="text-shadow: 2px 2px 4px #4de2fa; font-size: 2em">Search your answer in relevant groups</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1 col-xs-12"></div>
+
+        <div class="col-md-3 col-xs-12">
+          <div class="row" style="border: 2px solid #4de2fa; background-color: white; height: 300px">
+            <div class="col-xs-12" align="center" style="background-color:#4de2fa; border: 2px solid #4de2fa">
+              <h3><a href="{% url 'posts:create' %}"   style="color: white">Ask Question</a></h3>
+            </div>
+            <div style="margin-top: 100px" align="center">
+              <p style="text-shadow: 2px 2px 4px #4de2fa; font-size: 2em">Ask your questions in relevant group for quick answers</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
       {% else %}
       <div class="row">
-        <div class="col-xs-12" style="background-color: white; box-shadow: 8px 8px 5px #254E58">
-          <div class="row" style="background-color:#254E58">
-            <div class="col-xs-4" align="center">
-              <h3><a href="{% url 'register_app:login' %}" style="color: white">Create Group <span class="glyphicon glyphicon-plus-sign"></span></a></h3>
+
+        <div class="col-md-3 col-xs-12">
+          <div class="row" style="border: 2px solid #4de2fa; background-color: white; height: 300px">
+            <div class="col-xs-12" align="center" style="background-color:#4de2fa; border: 2px solid #4de2fa">
+              <h3><a href="{% url 'register_app:login' %}" style="color: white"> <span class="glyphicon glyphicon-plus-sign" style="color: white"></span> Create Group</a></h3>
             </div>
-            <div class="col-xs-4" align="center">
-              <h3><a href="{% url 'groups:all' %}" style="color: white">Groups</a></h3>
+            <div style="margin-top: 100px" align="center">
+              <p style="text-shadow: 2px 2px 4px #4de2fa; font-size: 2em">Create new group and start discussion</p>
             </div>
-            <div class="col-xs-4" align="center">
-              <h3><a href="{% url 'register_app:login' %}" style="color: white">Ask Question</a></h3>
-            </div>
-          </div>
-          <div class="signupbottom">
-            <h3 style="text-shadow: 2px 2px 5px dodgerblue; font-size: 40px">Ask your questions in relevant group for quick answers</h3>
-          </div>
           </div>
         </div>
+
+        <div class="col-md-1 col-xs-12"></div>
+
+        <div class="col-md-3 col-xs-12">
+          <div class="row" style="border: 2px solid #4de2fa; background-color: white;height: 300px">
+            <div class="col-xs-12" align="center" style="background-color:#4de2fa; border: 2px solid #4de2fa">
+              <h3><a href="{% url 'groups:all' %}" style="color: white">Groups</a></h3>
+            </div>
+            <div style="margin-top: 100px" align="center">
+              <p style="text-shadow: 2px 2px 4px #4de2fa; font-size: 2em">Search your answer in relevant groups</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1 col-xs-12"></div>
+
+        <div class="col-md-3 col-xs-12">
+          <div class="row" style="border: 2px solid #4de2fa; background-color: white; height: 300px">
+            <div class="col-xs-12" align="center" style="background-color:#4de2fa; border: 2px solid #4de2fa">
+              <h3><a href="{% url 'register_app:login' %}"  style="color: white">Ask Question</a></h3>
+            </div>
+            <div style="margin-top: 100px" align="center">
+              <p style="text-shadow: 2px 2px 4px #4de2fa; font-size: 2em">Ask your questions in relevant group for quick answers</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
       {% endif %}
     </div>
   </div>

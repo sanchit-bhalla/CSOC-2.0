@@ -4,15 +4,15 @@
   <div style="margin-top: 5%; margin-bottom: 5%">
     {% if user.is_authenticated %}
       <div class="row">
-        <div class="col-xs-12" style="background-color: white; box-shadow: 8px 8px 5px #254E58">
+        <div class="col-xs-12" style="background-color: white; box-shadow: 8px 8px 5px #4de2fa">
           <div class="row">
-            <div class="col-xs-4" align="center" style="background-color:#254E58">
+            <div class="col-xs-4" align="center" style="background-color:#4de2fa">
               <h3><a href="{% url 'groups:create' %}" style="color: white"> <span class="glyphicon glyphicon-plus-sign" style="color: white"></span> Create Group</a></h3>
             </div>
             <div class="col-xs-4" align="center" style="background-color: white">
-              <h2><a href="{% url 'groups:all' %}" style="color: #254E58; text-shadow: 2px 2px 4px #254E58"><strong>Groups</strong></a></h2>
+              <h2><a href="{% url 'groups:all' %}" style="color: #4de2fa; text-shadow: 2px 2px 4px #4de2fa"><strong>Groups</strong></a></h2>
             </div>
-            <div class="col-xs-4" align="center" style="background-color:#254E58">
+            <div class="col-xs-4" align="center" style="background-color:#4de2fa">
               <h3><a href="{% url 'posts:create' %}"  style="color: white">Ask Question</a></h3>
             </div>
           </div>
@@ -31,7 +31,7 @@
 							<div class="col-md-9 col-xs-12">
 								<div class="list-group">
 									{% for group in object_list %}
-										<a class="list-group-item" style="border: 1px solid #254E58" href="{% url 'groups:single' slug=group.slug %}">
+										<a class="list-group-item" style="border: 1px solid #4de2fa" href="{% url 'groups:single' slug=group.slug %}">
 												<h3 class="title list-group-item-heading">{{ group.name }}</h3>
 												<div class="list-group-item-text container-fluid">
 													{{ group.description_html|safe }}
@@ -54,15 +54,15 @@
         </div>
       {% else %}
       <div class="row">
-        <div class="col-xs-12" style="background-color: white; box-shadow: 8px 8px 5px #254E58">
+        <div class="col-xs-12" style="background-color: white; box-shadow: 8px 8px 5px #4de2fa">
           <div class="row">
-            <div class="col-xs-4" align="center" style="background-color:#254E58">
+            <div class="col-xs-4" align="center" style="background-color:#4de2fa">
               <h3><a href="{% url 'register_app:login' %}" style="color: white">Create Group <span class="glyphicon glyphicon-plus-sign"></span></a></h3>
             </div>
 						<div class="col-xs-4" align="center" style="background-color: white">
-              <h2><a href="{% url 'groups:all' %}" style="color: #254E58; text-shadow: 2px 2px 4px #254E58">Groups</a></h2>
+              <h2><a href="{% url 'groups:all' %}" style="color: #4de2fa; text-shadow: 2px 2px 4px #4de2fa">Groups</a></h2>
             </div>
-            <div class="col-xs-4" align="center" style="background-color:#254E58">
+            <div class="col-xs-4" align="center" style="background-color:#4de2fa">
               <h3><a href="{% url 'register_app:login' %}" style="color: white">Ask Question</a></h3>
             </div>
           </div>
@@ -81,7 +81,7 @@
 							<div class="col-md-9 col-xs-12">
 								<div class="list-group">
 									{% for group in object_list %}
-										<a class="list-group-item" style="border: 1px solid #254E58" href="{% url 'groups:single' slug=group.slug %}">
+										<a class="list-group-item" style="border: 1px solid #4de2fa" href="{% url 'groups:single' slug=group.slug %}">
 												 <h3 class="title list-group-item-heading">{{ group.name }}</h3>
 												<div class="list-group-item-text container-fluid">
 													{{ group.description_html|safe }}

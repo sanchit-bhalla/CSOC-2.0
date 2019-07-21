@@ -1,13 +1,24 @@
 {% extends "posts/post_base.html" %}
 
 {% block post_content %}
-  <h1>write your comment</h1>
-  <form class="post_form" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-default" name="button">Save</button>
-  </form>
+<div style="margin-top: 5%; margin-bottom: 5%; border:3px solid #4de2fa; background-color: white;padding: 50px;border-radius: 15px">
+  <div class="row">
+    <div class="col-xs-12" style="margin-bottom:30px">
+      <p style="text-shadow: 2px 2px 4px #4de2fa; font-size: 1.8em">Write Your comment</p>
+    </div>
+
+    <div class="col-xs-12" style="margin-bottom: 30px">
+        <form class="post_form" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="save btn btn-default" name="button">Save</button>
+        </form>
+    </div>
+  </div>
+</div>
+
   <script>
     var editor = new MediumEditor('.editable');
   </script>
+
 {%  endblock %}

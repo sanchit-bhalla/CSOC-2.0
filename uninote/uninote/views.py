@@ -5,6 +5,7 @@ import pyttsx3       # pip install pyttsx3
 import datetime
 import speech_recognition as sr
 import os
+import webbrowser
 
 class Homepage(TemplateView):
     template_name = 'homepage.html'
@@ -53,6 +54,21 @@ login_operations = {
             'issue':'posts:create','issues':'posts:create','problem':'posts:create','doubts':'posts:crete',
 
 }
+
+depart ={
+    'btech':['Computer','Engineering'], 'cs':['Computer','Engineering'],'cse':['Computer','Engineering'],
+    'computer science':['Computer','Engineering'], 'computer engineering':['Computer','Engineering'],'b tech':['Computer','Engineering'],
+    'computerscience':['Computer','Engineering'],
+}
+
+yrs={
+    '1st':'first','first':'first','2nd':'second','second':'second','3rd':'third','third':'third','4th':'fourth',"fourth":'fourth','forth':'fourth'
+}
+
+subjects = {
+    'maths':"Maths",'math':"Maths",'mathematics':"Maths",'c':'C%2FC%2B%2B','cplusplus':'C%2FC%2B%2B','c plus plus': 'C%2FC%2B%2B','cplus plus':'C%2FC%2B%2B',
+    'see plus plus':'C%2FC%2B%2B','sea plus plus':'C%2FC%2B%2B','see':'C%2FC%2B%2B','sea':'C%2FC%2B%2B'
+}
 def speak(audio):
     engine = pyttsx3.init('sapi5')  # sapi5 is used for voices
     voices = engine.getProperty('voices')
@@ -69,12 +85,12 @@ def Ask(request):
     else:
         speak("Good Evening!")
 
-    speak("Aleska speaking!. How i help you?")
+    speak("How i help you?")
 
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening....")
-        # r.pause_threshold = 1  # You can change other parameters according to your requirements
+        r.pause_threshold = 1  # You can change other parameters according to your requirements
         audio = r.listen(source)
     try:
         print("Recognising...")
@@ -89,15 +105,41 @@ def Ask(request):
         return redirect("homepage")
 
     else:
-        for k in operations:
-            if k in query:
-                return redirect(operations[k])
+        chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+        f = 0
+        if f==0:
+            for s in subjects:
+                if s in query:
+                    for d in depart:
+                        if d in query:
+                            dstr = ""
+                            for ele in depart[d]:
+                                dstr = dstr+ele+"+"
+                            dstr = dstr[:len(dstr)-1]
+                            for y in yrs:
+                                if y in query:
+                                    webbrowser.get(chrome_path).open_new_tab(f"http://127.0.0.1:8000/notes/displaynotes?year={yrs[y]}&subject={subjects[s]}&department={dstr}")
+                                    f = 1
+                                    break
+                            break
+                    break
 
-        for k in login_operations:
-            if k in query:
-                if request.user.is_authenticated:
-                    return redirect(login_operations[k])
-                else:
-                    speak("You need to login for that")
-                    return redirect('register_app:login')
-        return redirect("homepage")
+        if f==0:
+            for k in operations:
+                if k in query:
+                    f = 2
+                    return redirect(operations[k])
+        if f==0:
+            for k in login_operations:
+                if k in query:
+                    if request.user.is_authenticated:
+                        return redirect(login_operations[k])
+                    else:
+                        speak("You need to login for that")
+                        return redirect('register_app:login')
+
+            return redirect("homepage")
+
+
+class Listening(TemplateView):
+    template_name = 'listen.html'

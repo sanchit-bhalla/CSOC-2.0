@@ -1,9 +1,93 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block content %}
-     
-
-{% endblock %}
 
 {% block body_block %}
+<div class="row" style="margin-top:150px">
+  <div class="col-xs-2"></div>
+  <div class="col-xs-7">
+      <img style="height: 300px; width: 100%; box-shadow: 6px 6px 4px white" src="{% static 'pics/logo1.png' %}" alt="">
+  </div>
+</div>
+
+<div class="row" style="margin-bottom:200px">
+  <div class="col-xs-2"></div>
+  <div class="col-xs-7">
+
+    <div class="row mytextSlides">
+      <div class="col-xs-12" align="center">
+        <h2 style="color: white"><strong>Get the Free Online Education</strong></h2>
+      </div>
+    </div>
+
+    <div class="row mytextSlides">
+      <div class="col-xs-12" align="center">
+        <h2><a href='/notes' style="color: white"><strong>Get Notes of various subjects</strong></a></h2>
+      </div>
+    </div>
+
+    <div class="row mytextSlides">
+      <div class="col-xs-12" align="center">
+        <h2 style="color: white"><strong>Get Pervious year question papers</strong></h2>
+      </div>
+    </div>
+
+    <div class="row mytextSlides">
+      <div class="col-xs-12" align="center">
+        <h2><a href="{% url 'discussions' %}" style="color: white"><strong>Online community to solve your doubts</strong></a></h2>
+      </div>
+    </div>
+
+    <div class="row mytextSlides">
+      <div class="col-xs-12" align="center">
+        <h2><a href="{% url 'ask' %}" style="color: white"><strong>Get anything Just by asking in english</strong></a></h2>
+      </div>
+    </div>
+
+    <div class="row mytextSlides">
+      <div class="col-xs-12" align="center">
+        <h2><a href="{% url 'register_app:signup' %}" style="color: white"><strong>Register Here</strong></a></h2>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="row">
+
+  <div class="col-md-3 col-xs-6">
+    <img class="img-thumbnail img-fluid" src="{% static 'pics/sahil.jpg' %}" alt="">
+  </div>
+
+  <div class="col-md-3 col-xs-6">
+    <img class="img-thumbnail img-fluid" src="{% static 'pics/sahil.jpg' %}" alt="">
+  </div>
+
+  <div class="col-md-3 col-xs-6">
+    <img class="img-thumbnail img-fluid" src="{% static 'pics/sahil.jpg' %}" alt="">
+  </div>
+
+  <div class="col-md-3 col-xs-6">
+    <img class="img-thumbnail img-fluid" src="{% static 'pics/sahil.jpg' %}" alt="">
+  </div>
+
+</div>
+
+<script>
+  var myIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mytextSlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000); // Change image every 3 seconds
+  }
+</script>
+
 {% endblock %}
