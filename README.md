@@ -20,8 +20,8 @@ Once you have successfully installed python  then in your cmd write following co
 - Now in your browser open (http://127.0.0.1:8000/)
 - Here you can use this website
 
-## Various functionalities of website
-# Voice Search
+# Various functionalities of website
+- # Voice Search
 As in every normal website user can manually click on links and fill the forms to get notes and papers which we discuss later.
 But this website has functionality by which user can ask anything in english language and it will automatically takes you 
 to the asked page if possible.
@@ -37,7 +37,7 @@ to the asked page if possible.
 - #### Some features of this voice search like opening pdfs occur in chrome only. So chrome is recommended for this
 
 
-# Get free Notes 
+- # Get free Notes 
 ### Here user can get the notes of various subjects in a very simple way by following the steps below
 - Click on Notes in navbar. It will takes you to the page where various departments are present.
 - Choose your department and a dropdown to that particular department will appaer.
@@ -45,7 +45,7 @@ to the asked page if possible.
 - Fill the form and then it will ask you to choose subject.
 - Finally you see pdfs present regarding the given details.
 
-# Discussion Form
+- # Discussion Form
 It is a community where a user can discuss his/her doubts with other users. Here user can
 - create a new group.
 - ask doubts
