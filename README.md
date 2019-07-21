@@ -61,3 +61,24 @@ It is a community where a user can discuss his/her doubts with other users. Here
 - add comment to someone's question
 
 - ## Create new  group
+
+- This functionality can be accessed by selecting Discussions option in navbar.
+- User has to sign in if he/she wants to create one.
+- After signing in choose 'Create Group' option on Discussions page.
+- Enter the name and description for your desired group and click on 'create' button.
+- After this it will display option to join/leave group.
+
+- ## View Groups
+
+- On Discussions page click on 'Groups' option to view all the groups with relevant details like number of members and posts in each group.
+
+-## Ask Questions and Add Comments.
+
+- Click on 'Ask question' to ask doubts and resolve queries.
+- Put your message in message box.
+- Select the desired group from select menu below.
+- Click on Post button.
+- Now You can see your username and message on screen along with day/date/time of the post.
+- It will also give you option to delete post.
+- any other user can also comment on your post by clicking on 'Add Comment'.
+- After clicking on 'Add Comment' button any other user can leave a message with his/her username on your post.
