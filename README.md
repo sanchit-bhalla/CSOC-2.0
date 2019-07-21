@@ -21,6 +21,22 @@ Once you have successfully installed python  then in your cmd write following co
 - Here you can use this website
 
 ## Various functionalities of website
+# Voice Search
+As in every normal website user can manually click on links and fill the forms to get notes and papers which we discuss later.
+But this website has functionality by which user can ask anything in english language and it will automatically takes you 
+to the asked page if possible.
+### How to use
+- Click on 'Just Ask' option in the navbar
+- It will wish you and after waiting for a second you can ask your question in english language regarding to the website.
+- It will automatically takes you to your destination.
+#### for eg. if user asked ,"show digital circiut pdfs of 3rd semester ECE department"; then it will display that pdfs. No need to 
+#### fill any form as we discuss later.
+
+### Note:
+- After it wishes you, wait for about 1 second and then ask your question
+- #### Some features of this voice search like opening pdfs occur in chrome only. So chrome is recommended for this
+
+
 # Get free Notes 
 ### Here user can get the notes of various subjects in a very simple way by following the steps below
 - Click on Notes in navbar. It will takes you to the page where various departments are present.
