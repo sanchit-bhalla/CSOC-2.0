@@ -3,13 +3,15 @@ window.onload=function(){
 	$('.se-pre-con').fadeOut(2000);
 	
 	
-	var url=window.location.href;
+	var url=window.location.href.split('/');
+	var url=url[3];
 	console.log(url);
 	
 	$('.nav a').each(function(){
 		
-		
-		if(url==(this.href)){
+		var url1=this.href.split('/');
+		var url1=url1[3]
+		if(url==(url1)){
 			
 			$(this).closest('li').addClass(' active');
 			
@@ -17,13 +19,15 @@ window.onload=function(){
 		
 	});
 	
-	var url2=window.location.href;
+	var url2=window.location.href.split('/');
+	var url2=url2[3];
 	console.log(url2);
 	
 	$('.base a').each(function(){
 		
-		
-		if(url2==(this.href)){
+		var url3=this.href.split('/');
+		var url3=url3[3];
+		if(url2==(url3)){
 			
 			$(this).closest('li').addClass(' active');
 			
@@ -33,6 +37,7 @@ window.onload=function(){
 	
 	
 };
+
 
 
 $(document).ready(function(){

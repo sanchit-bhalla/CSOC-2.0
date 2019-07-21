@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+
+
+<div class='notes-gallery'>
+<div class='container'>
+
+<div class='notes-gallery-grid'>
+<h3 class='agile' style='font-family:Alegreya,serif;'>Previous Year Papers</h3>
+
+</div>
+
+<div id='myOverlay' class='overlay'>
+
+<span class='closebtn' onclick='closeform()' title='close form'>x</span>
+
+<div class='overlay-content'>
+
+<div>Fill in the Form</div>
+<form method='get' action='{% url "papers:getpapers" %}'>
+
+{% for field in form %}
+
+<p>{{field.label_tag}}{{field}}</p>
+
+{% endfor %}
+<button type='submit' value='submit'>submit</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<div class='row'>
+
+
+{% for x,i in deptset_range|slice:'0:3' %}
+
+<div class='col-sm-4 notesa rowa'>
+
+
+
+<div class='notesaThumbnail rowaThumbnail'>
+<div class='notesaThumbnailHover'>
+<h4>{{x.dept}}</h4>
+<button type='button' onclick='openform{{i}}()'>Click Here!</button>
+<meta id='mydata' data-dept='{{x.dept}}'>
+</div>
+<img src="{{x.image.url}}" alt='image' class='img-responsive'> 
+</div>
+
+
+</div>
+
+
+
+
+{% endfor %}
+
+
+
+
+
+{% for x,i in deptset_range|slice:"3:6" %}
+<div class='col-sm-4 notesa rowb'>
+
+<div class='notesaThumbnail rowbThumbnail'>
+<div class='notesaThumbnailHover'>
+<h4>{{x.dept}}</h4>
+<button type='button' onclick='openform{{i}}()'>Click Here!</button>
+<meta id='mydata' data-dept='{{x.dept}}'>
+</div>
+<img src="{{x.image.url}}" alt='image' class='img-responsive'> 
+</div>
+
+
+</div>
+{% endfor %}
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock %}

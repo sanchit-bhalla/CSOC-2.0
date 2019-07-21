@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block body_block %}
+{% load static %}
+<br>
+
+
+<div class='jumbotron' style='background-color:transparent;'>
+
+<div class='notes-container'>
+
+<form method='get' action='{% url "papers:displaypapers" %}' >
+
+{{form.as_p}}
+
+<br>
+<button type='submit' value='submit' class='getnotesbutton'>submit</button>
+</form>
+
+
+
+</div>
+</div>
+<br><br><br>
+{% endblock %}

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'groups',
     'posts',
     'notes',
+    'papers',
 ]
 
 MIDDLEWARE = [
