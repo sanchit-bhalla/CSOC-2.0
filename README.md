@@ -46,7 +46,7 @@ to the asked page if possible.
 - Finally you see pdfs present regarding the given details.
 
 
--# Get free previous year question papers
+- # Get free previous year question papers
 ### Here user can get previous year question papers by following the steps below
 - Click on Papers in navbar.It will take you to the page which displays various departments.
 - Choose your department and click on 'Click Here' button and a form will pop up.
