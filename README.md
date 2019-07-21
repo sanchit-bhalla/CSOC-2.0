@@ -72,7 +72,7 @@ It is a community where a user can discuss his/her doubts with other users. Here
 
 - On Discussions page click on 'Groups' option to view all the groups with relevant details like number of members and posts in each group.
 
--## Ask Questions and Add Comments.
+- ## Ask Questions and Add Comments.
 
 - Click on 'Ask question' to ask doubts and resolve queries.
 - Put your message in message box.
