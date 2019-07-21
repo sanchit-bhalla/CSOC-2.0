@@ -36,24 +36,29 @@ def getpapers(request):
     if flag==1:
 
       dept_subjects=Subject.objects.all().filter(Q(department__dept=department1),Q(semester=semester))
-      
-      subjects=[]
-      
-      for x in dept_subjects:
 
-          subjects.append(x.subject)
+      if len(dept_subjects)==0:  
 
-      CHOICES=subjects
+          return HttpResponseNotFound('Wait for the Files to be Uploaded to the Server')
+        
+      else:
       
-      form=GetPapers(initial={'department':department1,'semester':semester},auto_id=True)
-      form.fields['subject'].choices=[(choice,choice) for choice in CHOICES]
+          subjects=[]
       
-      return render(request=request,template_name='papers/getpapers.html',context={'form':form,'deptset':deptset})
+          for x in dept_subjects:
+
+               subjects.append(x.subject)
+
+          CHOICES=subjects
+      
+          form=GetPapers(initial={'department':department1,'semester':semester},auto_id=True)
+          form.fields['subject'].choices=[(choice,choice) for choice in CHOICES]
+      
+          return render(request=request,template_name='papers/getpapers.html',context={'form':form,'deptset':deptset})
 
     else:
 
          return HttpResponseRedirect('invalid/')
-
 
 
 def displaypapers(request):

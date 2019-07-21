@@ -11,8 +11,9 @@ urlpatterns=[
               path('',views.homepage,name='homepage'),
               path('getpapers/',views.getpapers,name='getpapers'),
               path('displaypapers/',views.displaypapers,name='displaypapers'),
-              path('invalid/',InvalidRequest.as_view(extra_context={'warning1':'Please Enter Valid Request'}),name='invalid'),
-              path('warning/',Warning.as_view(extra_context={'warning2':'No Files Present'}),name='warning')
+              path('displaypapers/invalid/',InvalidRequest.as_view(extra_context={'warning1':'Please Enter Valid Request or Wait for the files to be uploaded to the Server'}),name='invalid'),
+              path('displaypapers/warning/',Warning.as_view(extra_context={'warning2':'No Files Present'}),name='warning')
 
 
     ]
+

@@ -54,9 +54,16 @@ class Subject(models.Model):
 
 class PdfFiles(models.Model):
 
+    TERM=[('minor1','minor1'),
+          ('minor2','minor2'),
+          ('major','major'),
+        ]
+
+
     subject=models.ForeignKey(Subject,on_delete=models.CASCADE)
     files=models.FileField(upload_to='notes/myfiles',null=True,blank=True)
     image=models.ImageField(upload_to='myimages',null=True,blank=True)
+    term=models.CharField(max_length=20,choices=TERM,blank=True,null=True)
 
 
     class Meta:

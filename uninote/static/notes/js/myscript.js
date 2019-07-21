@@ -1,6 +1,6 @@
 window.onload=function(){
 	
-	$('.se-pre-con').fadeOut(2000);
+	$('.se-pre-con').fadeOut(1000);
 	
 	
 	var url=window.location.href.split('/');

@@ -52,25 +52,28 @@ def getnotes(request):
     if flag==1:
 
       dept_subjects=Subject.objects.all().filter(Q(department__dept=department1),Q(semester=semester))
-      
-      subjects=[]
-      
-      for x in dept_subjects:
+      if len(dept_subjects)==0:
 
-          subjects.append(x.subject)
+          return HttpResponseNotFound('Wait For the files to be uploaded to the server')
+      else:
+          
+         subjects=[]
+      
+         for x in dept_subjects:
 
-      CHOICES=subjects
+             subjects.append(x.subject)
+
+         CHOICES=subjects
       
-      form=GetNotes(initial={'department':department1,'semester':semester},auto_id=True)
-      form.fields['subject'].choices=[(choice,choice) for choice in CHOICES]
+         form=GetNotes(initial={'department':department1,'semester':semester},auto_id=True)
+         form.fields['subject'].choices=[(choice,choice) for choice in CHOICES]
       
-      return render(request=request,template_name='notes/getnotes.html',context={'form':form,'deptset':deptset})
+         return render(request=request,template_name='notes/getnotes.html',context={'form':form,'deptset':deptset})
 
     else:
 
-         return HttpResponseRedirect('invalid/')
+         return HttpResponseRedirect('invalid')
         
-
 
 def displaynotes(request):
 
@@ -105,7 +108,7 @@ def displaynotes(request):
                
               file_name=f.files.name.replace('notes/myfiles/','')
               file_name=file_name.replace('.pdf','')
-              file_list.append((f.files.url,f.image.url,file_name))
+              file_list.append((f.files.url,f.image.url,file_name,f.term))
 
        d['files']=file_list
 
