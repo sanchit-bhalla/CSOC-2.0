@@ -1,102 +1,68 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block without_container %}
+{% block body_block %}
 
-<div style="margin-bottom: 100px; width: 99%">
-    <div class="row mySlides" style="background-color:#024f4f; color:white">
+<div style="margin-bottom: 100px; width: 100%">
+    <div class="row mySlides">
       <div class="col-xs-12" align="center">
-        <h2><strong>Notes</strong></h2>
+        <a href="{% url 'notes:homepage' %}"><img style="box-shadow: 6px 6px 4px white;width:100%;height:600px" src="{% static 'pics/note.png' %}" style="width: 100%; height: 500px"></a>
       </div>
-      <a href="{% url 'notes:homepage' %}"><img src="{% static 'pics/note.png' %}" style="width: 100%; height: 500px"></a>
     </div>
 
-    <div class="row mySlides" style="background-color:#3b1c00; color:white">
+    <div class="row mySlides">
       <div class="col-xs-12" align="center">
-        <h2><strong>Previous Papers</strong></h2>
+        <a href="#"><img style="box-shadow: 6px 6px 4px white;width:100%;height:600px" src="http://www.jobalertinfo.com/wp-content/uploads/2019/05/Previous-Year-Question.jpg" style="width:100%; height: 500px"></a>
       </div>
-      <a href="#"><img src="{% static 'pics/prev_paper.png' %}" style="width:100%; height: 500px"></a>
     </div>
 
-    <div class="row mySlides" style="background-color:#00485c; color:white">
+    <div class="row mySlides">
       <div class="col-xs-12" align="center">
-        <h2><strong>Groups</strong></h2>
+        <a href="{% url 'discussions' %}"><img style="box-shadow: 6px 6px 4px white;width:100%;height:600px" src="{% static 'pics/discuss.png' %}" style="width:100%; height: 500px"></a>
       </div>
-      <a href="{% url 'discussions' %}"><img src="{% static 'pics/discuss.png' %}" style="width:100%; height: 500px"></a>
     </div>
+
 </div>
 
-<!-- <div class="container"> -->
-  <div style="margin-bottom: 5%">
+<div class="row">
+
+  <div class="col-md-3 col-xs-6">
+    <img class="img-thumbnail img-fluid" style="height:300px;width:100%" src="{% static 'pics/sahil.jpg' %}" alt="">
     <div class="row">
       <div class="col-xs-12">
-        <div class="row" style="margin-top: 50px">
-          <div class="col-md-1 col-xs-12"></div>
-          <div class="col-md-5 col-xs-12">
-            <div style="background-color: #254E58; color: white; border-radius: 10px; box-shadow: 8px 8px 5px #254E58">
-              <img style="width: 100%; border-radius: 10px" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
-              <div class="middle">
-                  <p>Piyush Khanna</p>
-                  <p>
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                    <!-- <a style="font:" class="fa fa-github" aria-hidden="true"></a> -->
-                  </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-5 col-xs-12">
-            <div style="background-color: #254E58; color: white; border-radius: 10px; box-shadow: 8px 8px 5px #254E58">
-              <img style="width: 100%; border-radius: 10px" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
-              <div class="middle">
-                  <p>Sadkirat Singh</p>
-                  <p>
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                  </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-1 col-xs-12"></div>
-        </div>
-
-        <div class="row" style="margin-top: 30px; margin-bottom: 50px">
-          <div class="col-md-1 col-xs-12"></div>
-          <div class="col-md-5 col-xs-12">
-            <div style="background-color: #254E58; color: white; border-radius: 10px; box-shadow: 8px 8px 5px #254E58">
-              <img style="width: 100%; border-radius: 10px" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
-              <div class="middle">
-                  <p>Sanchit Bhalla</p>
-                  <p>
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                  </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-xs-12">
-            <div style="background-color: #254E58; color: white; border-radius: 10px; box-shadow: 8px 8px 5px #254E58">
-              <img style="width: 100%; border-radius: 10px" src="{% static 'pics/rafale3.jpg' %}" alt="No pic">
-              <div class="middle">
-                  <p>Sahil Mehra</p>
-                  <p>
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                  </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        </div>
+        <h2 align="center" style="color:white; text-shadow: 2px 2px 4px #4de2fa"><u>Sahil Mehra</u></h2>
       </div>
     </div>
-<!-- </div> -->
+  </div>
+
+  <div class="col-md-3 col-xs-6">
+    <img class="img-thumbnail img-fluid" style="height:300px; width:100%" src="{% static 'pics/sanchit.jpg' %}" alt="">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 align="center" style="color:white; text-shadow: 2px 2px 4px #4de2fa"><u>Sanchit Bhalla</u></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-xs-6">
+
+    <img class="img-thumbnail img-fluid" style="height:300px; width:100%" src="{% static 'pics/sadkirat.jpg' %}" alt="">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 align="center" style="color:white; text-shadow: 2px 2px 4px #4de2fa"><u>Sadkirat Singh</u></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-xs-6">
+    <img class="img-thumbnail img-fluid" style="height:300px; width:95%" src="{% static 'pics/sahil.jpg' %}" alt="">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 align="center" style="color:white; text-shadow: 2px 2px 4px #4de2fa"><u>Sahil Mehra</u></h2>
+      </div>
+    </div>
+  </div>
+</div>
     <script>
       var myIndex = 0;
       carousel();
