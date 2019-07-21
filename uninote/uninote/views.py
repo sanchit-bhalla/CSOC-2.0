@@ -41,6 +41,8 @@ operations = {"sign up":'register_app:signup',"signup":'register_app:signup',
             "notes" : 'notes:homepage',"study material":'notes:homepage',"note":'notes:homepage',"departments":'notes:homepage',
             "department":'notes:homepage',
 
+            'paper':'/papers/','papers':'/papers/','exams':'/papers/','exam':'/papers/'
+
             }
 
 #  Operations for which login is necessary
@@ -58,7 +60,7 @@ login_operations = {
 depart ={
 
     'electronics':['Electronics','Technology'],'ece':['Electronics','Technology'],'electrical':['Electronics','Technology'],'electronic':['Electronics','Technology'],
-    
+
     'btech':['Computer','Engineering'], 'cs':['Computer','Engineering'],'cse':['Computer','Engineering'],
     'computer science':['Computer','Engineering'], 'computer engineering':['Computer','Engineering'],'b tech':['Computer','Engineering'],
     'computerscience':['Computer','Engineering'],
@@ -125,9 +127,20 @@ def Ask(request):
                             dstr = dstr[:len(dstr)-1]
                             for semester in sem:
                                 if semester in query:
-                                    webbrowser.get(chrome_path).open_new_tab(f"http://127.0.0.1:8000/notes/displaynotes?semester={semester}&subject={subjects[s]}&department={dstr}")
-                                    f = 1
-                                    break
+                                    if 'papers' in query or 'paper' in query or 'exam' in query or 'exams' in query:
+                                        try:
+                                            webbrowser.get(chrome_path).open_new_tab(f"http://127.0.0.1:8000/papers/displaypapers/?semester={sem[semester]}&subject={subjects[s]}&department={dstr}")
+                                            f = 1
+                                            break
+                                        except:
+                                            return redirect('/papers/')
+                                    else:
+                                        try:
+                                            webbrowser.get(chrome_path).open_new_tab(f"http://127.0.0.1:8000/notes/displaynotes?semester={sem[semester]}&subject={subjects[s]}&department={dstr}")
+                                            f = 1
+                                            break
+                                        except:
+                                            return redirect('/notes/')
                             break
                     break
 

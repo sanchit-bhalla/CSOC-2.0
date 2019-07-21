@@ -29,7 +29,6 @@
   <body>
 
         <div class="se-pre-con"></div>
-		<button id='myBtn' class='scroll' type='button' onclick='topFunction()'><image src="{% static 'notes/images/up2.png' %}" alt='up'/></button>
 
         <!---background-image-->
 
@@ -66,36 +65,26 @@
 
 
 				<div class='collapse navbar-collapse navbar-right' id='collapsibleNavbar'>
-     			<ul id='navlist'  class='nav navbar-nav'>
-				
-				
-			      <li class='navlink'>
-				  <a href="{% url 'homepage' %}">Home</a>
+     			<ul  class='nav navbar-nav'>
+			      <li>
+				  <a class="active" href="{% url 'homepage' %}">Home</a>
 				  </li>
 
-				  <li class='navlink'>
-				  <a href='/notes/'>Notes</a>
-				  </li>
-				  
-
-				  <li class='navlink'>
-				  <a href='/papers/'>Papers</a>
+				  <li class='dropdown'>
+				  <a href='/notes'>Notes</a>
 				  </li>
 
-                  <li class='navlink'><a href="{% url 'ask' %}">Just ask!</a></li>
-				  
-                  <li class='navlink'><a href="{% url 'about' %}">About</a></li>
-				  
-                  <li class='navlink'><a href="{% url 'discussions' %}">Discussions</a></li>
-				  
+				  <li class='dropdown'>
+				  <a href='#'>Papers</a>
+				  </li>
+
+          <li><a href="{% url 'ask' %}">Just ask!</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'discussions' %}">Discussions</a></li>
                       {% if user.is_authenticated %}
-					  
-                        <li class='navlink'><a href="{% url 'register_app:logout' %}">Logout</a></li>
-						
+                        <li><a href="{% url 'register_app:logout' %}">Logout</a></li>
                       {% else %}
-					  
-                        <li class='navlink'><a href="{% url 'register_app:login' %}">Login/SignUp</a></li>
-						
+                        <li><a href="{% url 'register_app:login' %}">Login/SignUp</a></li>
                       {% endif %}
 
 			   </ul>
@@ -122,50 +111,47 @@
 
 <!--header--->
 
+    <div class="container">
         {% block body_block %}
         <!-- anything outside this will inherited when extends -->
         {% endblock %}
-    
+    </div>
 
     {% block without_container %}
     <!-- anything outside this will inherited when extends -->
     {% endblock %}
 
 <!--footer-->
-<div class='footer' style="margin-top: 100px; margin-bottom:0px">
+<div class='footer' style="margin-top: 200px; margin-bottom:0px">
 
 <div class='footer2'>
 <div class='row'>
 
-
-  <div class='col-sm-3 aboutus'>
+  <div class='col-xs-6 aboutus'>
   <h3><a style='color: white' href="{% url 'about' %}">About Us</a></h1>
   <p>We are creating a notes providing app</p>
   </div>
 
-  <div class='col-sm-4 navigation'>
+  <div class='col-xs-6 navigation'>
+    <div class="row">
+      <div class="col-xs-12">
+          <h3 align="center">Navigation</h1>
+      </div>
+    </div>
 
-  <h3>Navigation</h1>
+    <div class="row">
+      <div class="col-xs-4 links"></div>
 
-  <ul class='base'>
-  <li class='links'><span class='glyphicon glyphicon-arrow-right'></span><a class='active' href='{% url "homepage" %}'>Home</a></li>
-  <li class='links'><span class='glyphicon glyphicon-arrow-right'></span><a href='/notes/'>Notes</a></li>
-  <li class='links'><span class='glyphicon glyphicon-arrow-right'></span><a href='/papers/'>Papers</a></li>
-  <li class='links'><span class='glyphicon glyphicon-arrow-right'></span><a href='{% url "discussions" %}'>Help</a></li>
-  </ul>
-
+      <div class="col-xs-4 links">
+        <span class='glyphicon glyphicon-arrow-right'></span><a style="color:white" class='active' href='{% url "homepage" %}'>Home</a>
+        <span class='glyphicon glyphicon-arrow-right'></span><a style="color:white" href='/notes'>Notes</a>
+        <span class='glyphicon glyphicon-arrow-right'></span><a style="color:white" href='{% url "discussions" %}'>Help</a></li>
+      </div>
+      <!-- <div class="col-xs-4 links">
+        <span class='glyphicon glyphicon-arrow-right'></span><a href='{% url "discussions" %}'>Help</a></li>
+      </div> -->
+    </div>
   </div>
-
-
-<div class='col-sm-5 newsletter'>
-<h3>Newsletter</h1>
-<form action="#" method="post">
-<input type="email" name="email" placeholder="Your email..." required=" ">
-<button type="submit"><i class="fa fa-search"></i></button>
-
-<p>Sign up now for more information about our <span class='uninote' style='color:#7EF9FF;'>Uninote</span></p>
-</div>
-
 
 </div>
 </div>
@@ -203,65 +189,6 @@
 <script src="{% static 'notes/js/modernizr.js' %}" type="text/javascript"></script>
 
 <script>
-
-var a=document.querySelectorAll('#mydata');
-console.log(a)
- 
-function openform0(){
-	
-	document.getElementById('myOverlay').style.display='block';
-	var djangodata=$(a[0]).data('dept');
-	document.getElementById("department").value=djangodata;
-	
-};
-
-function openform1(){
-	
-	document.getElementById('myOverlay').style.display='block';
-	var djangodata=$(a[1]).data('dept');
-	document.getElementById("department").value=djangodata;
-	
-};
-
-function openform2(){
-	
-	document.getElementById('myOverlay').style.display='block';
-	var djangodata=$(a[2]).data('dept');
-	document.getElementById("department").value=djangodata;
-	
-};
-
-function openform3(){
-	
-	document.getElementById('myOverlay').style.display='block';
-	var djangodata=$(a[3]).data('dept');
-	document.getElementById("department").value=djangodata;
-	
-};
-
-function openform4(){
-	
-	document.getElementById('myOverlay').style.display='block';
-	var djangodata=$(a[4]).data('dept');
-	document.getElementById("department").value=djangodata;
-	
-};
-
-function openform5(){
-	
-	document.getElementById('myOverlay').style.display='block';
-	var djangodata=$(a[5]).data('dept');
-	document.getElementById("department").value=djangodata;
-	
-};
-
-
-function closeform(){
-	
-	document.getElementById('myOverlay').style.display='none';
-}
-
-
 window.onscroll=function(){scrollFunction()};
 
 
