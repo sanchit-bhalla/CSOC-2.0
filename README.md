@@ -45,6 +45,15 @@ to the asked page if possible.
 - Fill the form and then it will ask you to choose subject.
 - Finally you see pdfs present regarding the given details.
 
+
+-# Get free previous year question papers
+### Here user can get previous year question papers by following the steps below
+- Click on Papers in navbar.It will take you to the page which displays various departments.
+- Choose your department and click on 'Click Here' button and a form will pop up.
+- Form will ask for your semester and click on 'submit' button.
+- Now choose your desired subject and click 'submit'.
+- Now you will see Pdfs with required details.
+
 - # Discussion Form
 It is a community where a user can discuss his/her doubts with other users. Here user can
 - create a new group.
