@@ -1,7 +1,39 @@
 window.onload=function(){
 	
 	$('.se-pre-con').fadeOut(2000);
+	
+	
+	var url=window.location.href;
+	console.log(url);
+	
+	$('.nav a').each(function(){
+		
+		
+		if(url==(this.href)){
+			
+			$(this).closest('li').addClass(' active');
+			
+		}
+		
+	});
+	
+	var url2=window.location.href;
+	console.log(url2);
+	
+	$('.base a').each(function(){
+		
+		
+		if(url2==(this.href)){
+			
+			$(this).closest('li').addClass(' active');
+			
+		}
+		
+	});
+	
+	
 };
+
 
 $(document).ready(function(){
 

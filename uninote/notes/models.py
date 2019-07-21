@@ -24,9 +24,21 @@ class Departments(models.Model):
 
 class Subject(models.Model):
 
+    SEMESTER=( ('first','First'),
+           ('second','Second'),
+           ('third','Third'),
+           ('fourth','Fourth'),
+           ('fifth','Fifth'),
+           ('sixth','Sixth'),
+           ('seventh','Seventh'),
+           ('eigth','Eigth'),
+           ('ninth','Ninth'),
+           
+        )
+
     department=models.ForeignKey(Departments,on_delete=models.CASCADE)
     subject=models.CharField(max_length=100,blank=True,null=True)
-
+    semester=models.CharField(max_length=20,choices=SEMESTER,blank=True,null=True)
 
     class Meta:
 
@@ -62,14 +74,8 @@ class PdfFiles(models.Model):
     
 class Notes(models.Model):
 
-    YEAR=( ('first','First'),
-           ('second','Second'),
-           ('third','Third'),
-           ('fourth','Fourth'),
-        )
 
     department=models.ForeignKey(Departments,on_delete=models.CASCADE)
-    year=models.CharField(max_length=20,choices=YEAR)
     subject=models.ForeignKey(Subject,on_delete=models.CASCADE)
     files=models.ManyToManyField(PdfFiles)
     

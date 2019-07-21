@@ -1,4 +1,4 @@
-{% extends 'notes/header.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block body_block %}
 
@@ -18,7 +18,7 @@
 <div class='overlay-content'>
 
 <div>Fill in the Form</div>
-<form method='get' action='{% url "notes:displaynotes" %}'>
+<form method='get' action='{% url "notes:getnotes" %}'>
 
 {% for field in form %}
 
@@ -32,9 +32,7 @@
 </div>
 
 </div>
-
-
-
+----
 
 <div class='row'>
 
