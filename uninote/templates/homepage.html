@@ -2,13 +2,14 @@
 {% load staticfiles %}
 
 {% block body_block %}
+<div class="container">
+
 <div class="row" style="margin-top:150px">
   <div class="col-xs-2"></div>
   <div class="col-xs-7">
       <img style="height: 300px; width: 100%; box-shadow: 6px 6px 4px white" src="{% static 'pics/logo1.png' %}" alt="">
   </div>
 </div>
-
 <div class="row" style="margin-bottom:200px">
   <div class="col-xs-2"></div>
   <div class="col-xs-7">
@@ -109,5 +110,5 @@
     setTimeout(carousel, 3000); // Change image every 3 seconds
   }
 </script>
-
+</div>
 {% endblock %}

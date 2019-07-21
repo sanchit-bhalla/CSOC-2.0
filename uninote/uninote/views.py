@@ -73,8 +73,14 @@ sem={
 }
 
 subjects = {
-    'electrical':'Electronics+Devices+and+Circuits','electronics':'Electronics+Devices+and+Circuits','circuits':'Electronics+Devices+and+Circuits',
-    'electrical devices':'Electronics+Devices+and+Circuits',
+    'electrical circiuts':'Electronics+Devices+and+Circuits','electronics devices':'Electronics+Devices+and+Circuits','circuits':'Electronics+Devices+and+Circuits',
+    'electronic devices':'Electronics+Devices+and+Circuits','electrical devices':'Electronics+Devices+and+Circuits',
+
+    'data communication':"Data+Communication",'datacommunication':'Data+Communication','dc notes':'Data+Communication','dc pdfs':'Data+Communication',
+
+    'discrete mathematics':"Discrete+Mathematics",'discrete maths':"Discrete+Mathematics",'discrete mathematic':"Discrete+Mathematics",'discrete mas':"Discrete+Mathematics",
+    'discrete math':"Discrete+Mathematics",'ds notes':"Discrete+Mathematics",'ds pdfs':"Discrete+Mathematics",
+
     'maths':"Maths",'math':"Maths",'mathematics':"Maths",'c':'C%2FC%2B%2B','cplusplus':'C%2FC%2B%2B','c plus plus': 'C%2FC%2B%2B','cplus plus':'C%2FC%2B%2B',
     'see plus plus':'C%2FC%2B%2B','sea plus plus':'C%2FC%2B%2B','see':'C%2FC%2B%2B','sea':'C%2FC%2B%2B'
 }
