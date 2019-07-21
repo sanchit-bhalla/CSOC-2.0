@@ -38,7 +38,6 @@ class Semester(forms.Form):
            ('sixth','Sixth'),
            ('seventh','Seventh'),
            ('eigth','Eigth'),
-           ('ninth','Ninth'),
            
         )
 
