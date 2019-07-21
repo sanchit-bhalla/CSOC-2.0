@@ -56,16 +56,23 @@ login_operations = {
 }
 
 depart ={
+
+    'electronics':['Electronics','Technology'],'ece':['Electronics','Technology'],'electrical':['Electronics','Technology'],'electronic':['Electronics','Technology'],
+    
     'btech':['Computer','Engineering'], 'cs':['Computer','Engineering'],'cse':['Computer','Engineering'],
     'computer science':['Computer','Engineering'], 'computer engineering':['Computer','Engineering'],'b tech':['Computer','Engineering'],
     'computerscience':['Computer','Engineering'],
+
 }
 
-yrs={
-    '1st':'first','first':'first','2nd':'second','second':'second','3rd':'third','third':'third','4th':'fourth',"fourth":'fourth','forth':'fourth'
+sem={
+    '1st':'first','first':'first','2nd':'second','second':'second','3rd':'third','third':'third','4th':'fourth',"fourth":'fourth','forth':'fourth',
+    '5th':'fifth','fifth':'fifth','6th':'sixth','sixth':'sixth','7th':'seventh','seventh':'seventh','8th':'eight'
 }
 
 subjects = {
+    'electrical':'Electronics+Devices+and+Circuits','electronics':'Electronics+Devices+and+Circuits','circuits':'Electronics+Devices+and+Circuits',
+    'electrical devices':'Electronics+Devices+and+Circuits',
     'maths':"Maths",'math':"Maths",'mathematics':"Maths",'c':'C%2FC%2B%2B','cplusplus':'C%2FC%2B%2B','c plus plus': 'C%2FC%2B%2B','cplus plus':'C%2FC%2B%2B',
     'see plus plus':'C%2FC%2B%2B','sea plus plus':'C%2FC%2B%2B','see':'C%2FC%2B%2B','sea':'C%2FC%2B%2B'
 }
@@ -116,9 +123,9 @@ def Ask(request):
                             for ele in depart[d]:
                                 dstr = dstr+ele+"+"
                             dstr = dstr[:len(dstr)-1]
-                            for y in yrs:
-                                if y in query:
-                                    webbrowser.get(chrome_path).open_new_tab(f"http://127.0.0.1:8000/notes/displaynotes?year={yrs[y]}&subject={subjects[s]}&department={dstr}")
+                            for semester in sem:
+                                if semester in query:
+                                    webbrowser.get(chrome_path).open_new_tab(f"http://127.0.0.1:8000/notes/displaynotes?semester={semester}&subject={subjects[s]}&department={dstr}")
                                     f = 1
                                     break
                             break
@@ -138,7 +145,7 @@ def Ask(request):
                         speak("You need to login for that")
                         return redirect('register_app:login')
 
-            return redirect("homepage")
+        return redirect("homepage")
 
 
 class Listening(TemplateView):
