@@ -155,7 +155,7 @@ $(b[2]).children('.notesaThumbnail').click(function(){
 
 $('.notes-header').find('span').click(function(){
 	
-	$(this).toggleClass(' glyphicon glyphicon-search glyphicon glyphicon-remove');
+	
 	
 	$('.notes-header').find('.form-search').fadeToggle();
 	
