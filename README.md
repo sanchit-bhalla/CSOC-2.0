@@ -10,10 +10,12 @@ Once you have successfully installed python  then in your cmd write following co
 - pip install misaka
 - pip install pillow
 - pip install pyttsx3
+- pip install SpeechRecognition
+- pip install PyAudio. for this refer (https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-my-python-how-to-do-it)
 # Working using cmd
 ### Follow the steps below
 - Download the zip.
-- Extract all foles and folders in single directory.
+- Extract all files and folders in single directory.
 - Open cmd and change directory where uinote(extracted folder) is present.
 - Activate your virtual environment if you are using it. It is not mandatory.
 - Then in your cmd type  python manage.py runserver. Do not close cmd; just minimise it.
