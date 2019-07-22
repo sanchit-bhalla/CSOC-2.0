@@ -205,8 +205,6 @@ body a:hover{
 
 .notes-header>.container>.navbar-default>.navbar-collapse>.icon{
 	
-	
-	
 }
 
 .notes-header>.container>.navbar-default>.navbar-collapse>.icon a span{
@@ -215,7 +213,6 @@ body a:hover{
 	font-size:25px;
 	margin-left:25px;
 	position:relative;
-	cursor:pointer;
 	
 }
 
@@ -293,10 +290,10 @@ body a:hover{
 
 .notes-gallery>.container>.overlay>.overlay-content{
 	
-
-	margin-left:5%;
-	margin-right:5%;
-	margin-top:50%;
+	position:absolute;
+	top:25%;
+	width:50%;
+	left:24%;
 	background-color:white;
 }
 
@@ -771,9 +768,11 @@ body a:hover{
 .jumbotron>.notes-container{
 	
 	background-color:#ffffff;
-	margin-left:5%;
-	margin-right:5%;
-	padding:4%;
+	margin-left:100px;
+	margin-right:100px;
+	padding-top:30px;
+	padding-bottom:30px;
+	
 }
 
 .jumbotron>.notes-container form{
@@ -796,7 +795,6 @@ body a:hover{
 	padding:10px 20px;
 	font-weight:bold;
 	box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	margin-bottom:3%;
 }
 
 /*//getnotes//*/
@@ -885,10 +883,6 @@ body a:hover{
 	top:100%;
 		
 	}
-	
-	
-
-
 	
 }
 
