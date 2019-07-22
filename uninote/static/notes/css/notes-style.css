@@ -291,10 +291,10 @@ body a:hover{
 .notes-gallery>.container>.overlay>.overlay-content{
 	
 	position:absolute;
-	top:25%;
-	width:50%;
-	left:24%;
 	background-color:white;
+	width:70%;
+	top:30%;
+	left:15%;
 }
 
 .notes-gallery>.container>.overlay>.overlay-content div{
@@ -768,10 +768,9 @@ body a:hover{
 .jumbotron>.notes-container{
 	
 	background-color:#ffffff;
-	margin-left:100px;
-	margin-right:100px;
-	padding-top:30px;
-	padding-bottom:30px;
+	margin-left:10%;
+	margin-right:10%;
+	padding:5%;
 	
 }
 
@@ -827,6 +826,16 @@ body a:hover{
 	padding:5px 8px;
 		
 	}
+	
+	.notes-gallery>.container>.overlay>.overlay-content{
+	
+	position:absolute;
+	background-color:white;
+	width:100%;
+	top:30%;
+	left:0%;
+	
+}
 	
 	.notes-gallery>.container>.overlay>.overlay-content form{
 
