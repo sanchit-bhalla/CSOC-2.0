@@ -1,4 +1,6 @@
 # CSOC-2.0
+### Link for demo video (https://drive.google.com/open?id=1MF980HOWH1yjsLt6NJB-35uwSrHHLlGV)
+    - This video doesn't show all funtionalities like Voice Search which we discuss below
 # Requirements
 Any python 3 version. However pythnon 3.7 is recommended.
 Once you have successfully installed python  then in your cmd write following commands to install various modules 
