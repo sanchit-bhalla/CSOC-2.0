@@ -38,7 +38,7 @@ to the asked page if possible.
 
 ### Note:
 - After it wishes you, wait for about 1 second and then ask your question
-- #### Some features of this voice search like opening pdfs occur in chrome only. So chrome is recommended for this
+- #### Some features of this voice search like opening pdfs occur in chrome only. So chrome is recommended for this.However it is not mandatory to use chrome only. If you use some other browser and you ask for notes or papers it will automatically open that one in chrome .
 
 
 - # Get free Notes 
