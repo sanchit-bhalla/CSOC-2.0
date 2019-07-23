@@ -13,7 +13,11 @@ Once you have successfully installed python  then in your cmd write following co
 - pip install pillow
 - pip install pyttsx3
 - pip install SpeechRecognition
-- pip install PyAudio. for this refer (https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-my-python-how-to-do-it)
+- pip install PyAudio. If you are using windows then refer (https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-my-python-how-to-do-it)
+- ### Sometimes you may get pywin error. So you need to install that from github. Follow the instructions below:
+     1. Open (https://github.com/mhammond/pywin32/releases/tag/b224).
+     2. Scroll down you see 'Assets' dropdown. Click on it.
+     3. Now based on your python version install correct .exe
 # Working using cmd
 ### Follow the steps below
 - Download the zip.
