@@ -98,6 +98,18 @@ def displaypapers(request):
 
        d['files']=file_list
 
+       files_minor1=list(filter(lambda x:(x[3]=='minor1'),d['files']))
+
+       d['files1']=files_minor1
+
+       files_minor2=list(filter(lambda x:(x[3]=='minor2'),d['files']))
+
+       d['files2']=files_minor2
+
+       files_major=list(filter(lambda x:(x[3]=='major'),d['files']))
+
+       d['files3']=files_major
+
 
        return render(request=request,template_name='papers/displaypapers.html',context={'mydata':d,'deptset':deptset})
 
