@@ -21,7 +21,7 @@ def homepage(request):
     dept_set=depts.object_list
     
     form=Semester(auto_id=True)
-    return render(request,template_name='papers/home.html',context={'deptset_range':list(zip(dept_set,list(range(len(deptset))))),'form':form,'depts':depts})
+    return render(request,template_name='papers/home.html',context={'deptset_range':list(zip(dept_set,list(range(len(dept_set))))),'form':form,'depts':depts})
 
 
 def getpapers(request):
