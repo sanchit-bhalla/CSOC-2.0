@@ -14,7 +14,7 @@ class Departments(models.Model):
 
     def __str__(self):
 
-         return self.dept
+         return '{}, {}'.format(self.dept,self.HOD)
 
 
 class Subject(models.Model):
@@ -41,7 +41,7 @@ class Subject(models.Model):
 
     def __str__(self):
 
-        return self.subject
+        return '{},{},{} sem'.format(self.subject,self.department.dept,self.semester)
     
 
 class PdfFiles(models.Model):
@@ -64,7 +64,7 @@ class PdfFiles(models.Model):
 
     def __str__(self):
 
-        return self.subject.subject
+        return '{},{} sem,{}'.format(self.subject.subject,self.subject.semester,self.term)
 
 
 class Papers(models.Model):
@@ -84,7 +84,7 @@ class Papers(models.Model):
 
     def __str__(self):
 
-        return self.subject.subject
+         return '{},{}'.format(self.subject.subject,self.department.dept)
 
 
     
