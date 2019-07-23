@@ -86,6 +86,12 @@
 				  
                   <li class='navlink'><a href="{% url 'discussions' %}">Discussions</a></li>
 				  
+				      {% if user.is_staff %}
+					     
+						 <li class='navlink'><a href="/admin">Admin</a></li>
+					  
+					  {% endif %}
+				  
                       {% if user.is_authenticated %}
 					  
                         <li class='navlink'><a href="{% url 'register_app:logout' %}">Logout</a></li>
