@@ -524,6 +524,18 @@ body a:hover{
 	animation-iteration-count:infinite;
 }
 
+.notes-gallery>.container>.pagination>.step-links a{
+	
+	color:white;
+	font-size:20px;
+	
+}
+
+.notes-gallery>.container>.pagination>.step-links a:hover{
+	
+	color:powderblue;
+	
+}
 
 
 

@@ -79,7 +79,30 @@
 
 </div>
 {% endfor %}
+
 </div>
+
+<div class='pagination'>
+<span class='step-links'>
+   {% if depts.has_previous %}
+   <a href='?page=1'>&laquo; first</a>
+   <a href='?page={{depts.previous_page_number}}'>previous</a>
+   {% endif %}
+   
+   <span style='color:white; font-size:30px;' class='current'>
+      Page {{depts.number}} of {{depts.paginator.num_pages}}
+   </span>
+   
+   {% if depts.has_next %}
+   <a href='?page={{depts.next_page_number}}'>next</a>
+   <a href='?page={{depts.paginator.num_pages}}'>last &raquo;</a>
+   {% endif %}
+   
+   
+</span>
+</div>
+
+
 </div>
 </div>
 

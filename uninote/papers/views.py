@@ -5,15 +5,23 @@ from .forms import *
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotFound,HttpResponseRedirect
 from django.views.generic.base import TemplateView
-
+from django.core.paginator import Paginator
 
 deptset=Departments.objects.all()
 
 def homepage(request):
     
     deptset=Departments.objects.all()
+    paginator=Paginator(deptset,6)
+
+    page=request.GET.get('page')
+
+    depts=paginator.get_page(page)
+
+    dept_set=depts.object_list
+    
     form=Semester(auto_id=True)
-    return render(request,template_name='papers/home.html',context={'deptset_range':list(zip(deptset,list(range(len(deptset))))),'form':form})
+    return render(request,template_name='papers/home.html',context={'deptset_range':list(zip(dept_set,list(range(len(deptset))))),'form':form,'depts':depts})
 
 
 def getpapers(request):
