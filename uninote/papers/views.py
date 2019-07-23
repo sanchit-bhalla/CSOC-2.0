@@ -10,6 +10,8 @@ from django.core.paginator import Paginator
 deptset=Departments.objects.all()
 
 def homepage(request):
+
+    global deptset
     
     deptset=Departments.objects.all()
     paginator=Paginator(deptset,6)
