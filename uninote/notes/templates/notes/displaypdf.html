@@ -5,7 +5,8 @@
 <div class='container container-fluid' style='background-color:#ffffff'>
 
 <div  class='row'>
-{% for p,i,n,t in mydata.files %}
+<h3 style='text-align:center;border:1px solid black;font-family:Alegreya,serif'>Minor1</h3>
+{% for p,i,n,t in mydata.files1 %}
 
 <div class='col-sm-3' style='text-align:center;padding:30px;'>
 
@@ -15,6 +16,51 @@
 
 <p style='text-align:center;font-size:15px;font-weight:bold;'>{{n}}</p>
 <p style='text-align:center;border:1px solid black;font-size:15px;font-weight:bold;'>{{t}}</p>
+
+<p><a class='download' style='background-color:#588BAE;color:white;padding:10px 20px;' href='{{p}}'><span style='margin-right:5px;color:white;' class='glyphicon glyphicon-download-alt'></span>Open</a></p>
+
+
+
+</div>
+
+{% endfor %}
+</div>
+
+<div  class='row'>
+<h3 style='text-align:center;border:1px solid black;font-family:Alegreya,serif'>Minor2</h3>
+{% for p,i,n,t in mydata.files2 %}
+
+<div class='col-sm-3' style='text-align:center;padding:30px;'>
+
+
+
+<img src='{{i}}' alt='image' width='250px' height='300px' style='margin-bottom:10px;border:2px solid black;border-radius:2px;'>
+
+<p style='text-align:center;font-size:15px;font-weight:bold;'>{{n}}</p>
+<p style='text-align:center;border:1px solid black;font-size:15px;font-weight:bold;'>{{t}}</p>
+
+<p><a class='download' style='background-color:#588BAE;color:white;padding:10px 20px;' href='{{p}}'><span style='margin-right:5px;color:white;' class='glyphicon glyphicon-download-alt'></span>Open</a></p>
+
+
+
+</div>
+
+{% endfor %}
+</div>
+
+<div  class='row'>
+<h3 style='text-align:center;border:1px solid black;font-family:Alegreya,serif'>Major</h3>
+{% for p,i,n,t in mydata.files3 %}
+
+<div class='col-sm-3' style='text-align:center;padding:30px;'>
+
+
+
+<img src='{{i}}' alt='image' width='250px' height='300px' style='margin-bottom:10px;border:2px solid black;border-radius:2px;'>
+
+<p style='text-align:center;font-size:15px;font-weight:bold;'>{{n}}</p>
+<p style='text-align:center;border:1px solid black;font-size:15px;font-weight:bold;'>{{t}}</p>
+
 <p><a class='download' style='background-color:#588BAE;color:white;padding:10px 20px;' href='{{p}}'><span style='margin-right:5px;color:white;' class='glyphicon glyphicon-download-alt'></span>Open</a></p>
 
 
