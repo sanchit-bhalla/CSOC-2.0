@@ -6,6 +6,7 @@ from django.http import *
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseNotFound,HttpResponseRedirect
 from django.views.generic.base import TemplateView
+from django.core.paginator import Paginator
 
 from django.template.defaulttags import register
 
@@ -24,9 +25,18 @@ def homepage(request):
 
     
     deptset=Departments.objects.all()
+
+    paginator=Paginator(deptset,6)
+
+    page=request.GET.get('page')
+
+    depts=paginator.get_page(page)
+
+    dept_set=depts.object_list
+    
     form=Semester(auto_id=True)
 
-    return render(request=request,template_name='notes/home.html',context={'deptset_range':list(zip(deptset,list(range(len(deptset))))),'form':form})
+    return render(request=request,template_name='notes/home.html',context={'deptset_range':list(zip(dept_set,list(range(len(dept_set))))),'form':form,'depts':depts})
     #return render(request=request,template_name='notes/home.html',context={'deptset':deptset,'form':form})
 
     
