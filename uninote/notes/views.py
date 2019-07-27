@@ -118,18 +118,38 @@ def displaynotes(request):
                  file_list.append((x.files.url,x.image.url,file_name,x.term))
 
        d['files']=file_list
-
+       
+       #####################################################################################
        files_minor1=list(filter(lambda x:(x[3]=='minor1'),d['files']))
 
-       d['files1']=files_minor1
+       if len(files_minor1)==0:
 
+           d['msg1']='Files will be uploaded soon'
+           
+       else:
+
+           d['files1']=files_minor1
+       #####################################################################################
        files_minor2=list(filter(lambda x:(x[3]=='minor2'),d['files']))
 
-       d['files2']=files_minor2
+       if len(files_minor2)==0:
 
+           d['msg2']='Files will be uploaded soon'
+           
+       else:
+
+           d['files2']=files_minor2
+       #####################################################################################
        files_major=list(filter(lambda x:(x[3]=='major'),d['files']))
 
-       d['files3']=files_major
+       if len(files_major)==0:
+
+           d['msg3']='Files will be uploaded soon'
+           
+       else:
+
+           d['files3']=files_major
+       #####################################################################################
 
        return render(request=request,template_name='notes/displaypdf.html',context={'mydata':d,'deptset':deptset})
 
