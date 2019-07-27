@@ -34,7 +34,7 @@ def otp_form_view(request):
     if form.is_valid():
         num = form.cleaned_data['Phone_number']
         with open("numbers.txt","a") as f:
-            f.write(num+"\n")        
+            f.write(num+"\n")
 
         import random
         import requests
@@ -42,7 +42,7 @@ def otp_form_view(request):
         global rand_otp
         rand_otp = random.randint(1000,9999)
         url = "https://www.fast2sms.com/dev/bulk"
-        querystring = {"authorization":"vwBj8nZfX1Ay2WUt6bLoGT7q5eRhYugKcisNzad0EM9lQVIP34g5dL2u1tFfvB4rSOnwDZXN3iAaVqbQ","sender_id":"FSTSMS","language":"english","route":"qt","numbers":f'{num}',"message":"13099","variables":"{BB}","variables_values":f'{rand_otp}'}
+        querystring = {"authorization":"YOUR_AUTHORIZATION_KEY","sender_id":"FSTSMS","language":"english","route":"qt","numbers":f'{num}',"message":"template_id","variables":"{BB}","variables_values":f'{rand_otp}'}
         headers = {
             'cache-control': "no-cache"
             }
