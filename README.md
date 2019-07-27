@@ -90,3 +90,14 @@ It is a community where a user can discuss his/her doubts with other users. Here
 - It will also give you option to delete post.
 - any other user can also comment on your post by clicking on 'Add Comment'.
 - After clicking on 'Add Comment' button any other user can leave a message with his/her username on your post.
+
+# Upload notes
+  Every users will not have permissions to upload notes. Only some users like CR's of every class will be given rights to upload notes. 
+  Users with superuser rights can see 'upload' option in the navbar. But for security purposes we have used OTP confirming method.
+  
+  # OTP SMS
+   - When CR(or any user with superuser rights) click on 'upload' option a form open with some warnings.
+   - Now user input his/her phone number and click on generate OTP.
+   - OTP is sent to the number provided.
+   - Now if the OTP is confirmed only then user will see form to upload notes.
+   - There is also a resend otp button.
