@@ -4,4 +4,4 @@ from .models import *
 admin.site.register(Departments)
 admin.site.register(Subject)
 admin.site.register(PdfFiles)
-admin.site.register(Papers)
+#admin.site.register(Papers)

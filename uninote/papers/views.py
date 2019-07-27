@@ -75,36 +75,33 @@ def displaypapers(request):
 
     global deptset
 
-    dept=request.GET['department'].replace('+','%20')
     sub=request.GET['subject']
 
-    queryset=Papers.objects.all()
-    queryset=queryset.filter(Q(department__dept=dept),Q(subject__subject=sub))
+    queryset=PdfFiles.objects.all()
+    queryset=queryset.filter(subject__subject=sub)
     if len(queryset)==0:
 
         return HttpResponseRedirect('invalid/')
 
     else:
                              
-       subject_notes=queryset[0]
+       subject_file_list=list(queryset)
 
        d={}
-       d['department']=subject_notes.department.dept
-       d['subject']=subject_notes.subject.subject
        file_list=[]
 
-       for f in subject_notes.files.all():
+       for x in subject_file_list:
 
-           if f.files.name is '':
+           if x.files.name is '':
                
                return HttpResponseRedirect('warning/')
                 
 
            else:
                
-              file_name=f.files.name.replace('notes/myfiles/','')
+              file_name=x.files.name.replace('notes/myfiles/','')
               file_name=file_name.replace('.pdf','')
-              file_list.append((f.files.url,f.image.url,file_name,f.term))
+              file_list.append((x.files.url,x.image.url,file_name,x.term))
 
        d['files']=file_list
 

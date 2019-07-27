@@ -52,9 +52,9 @@ class PdfFiles(models.Model):
         ]
 
     subject=models.ForeignKey(Subject,on_delete=models.CASCADE)
-    files=models.FileField(upload_to='notes/myfiles',null=True,blank=True)
+    files=models.FileField(upload_to='notes/myfiles',default=1)
     image=models.ImageField(upload_to='myimages',null=True,blank=True)
-    term=models.CharField(max_length=20,choices=TERM,blank=True,null=True)
+    term=models.CharField(max_length=20,choices=TERM,default=1)
 
 
     class Meta:
@@ -67,24 +67,24 @@ class PdfFiles(models.Model):
         return '{},{} sem,{}'.format(self.subject.subject,self.subject.semester,self.term)
 
 
-class Papers(models.Model):
-
-
-    department=models.ForeignKey(Departments,on_delete=models.CASCADE)
-    subject=models.ForeignKey(Subject,on_delete=models.CASCADE)
-    files=models.ManyToManyField(PdfFiles)
-    
-
-    class Meta:
-
-        
-        verbose_name_plural='Papers'
-
-
-
-    def __str__(self):
-
-         return '{},{}'.format(self.subject.subject,self.department.dept)
-
-
+##class Papers(models.Model):
+##
+##
+##    department=models.ForeignKey(Departments,on_delete=models.CASCADE)
+##    subject=models.ForeignKey(Subject,on_delete=models.CASCADE)
+##    files=models.ManyToManyField(PdfFiles)
+##    
+##
+##    class Meta:
+##
+##        
+##        verbose_name_plural='Papers'
+##
+##
+##
+##    def __str__(self):
+##
+##         return '{},{}'.format(self.subject.subject,self.department.dept)
+##
+##
     
