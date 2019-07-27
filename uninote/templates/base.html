@@ -64,6 +64,8 @@
 
 
 				<div class='collapse navbar-collapse navbar-right' id='collapsibleNavbar'>
+				
+				
      			<ul id='navlist'  class='nav navbar-nav'>
 				
 				
@@ -86,9 +88,21 @@
 				  
                   <li class='navlink'><a href="{% url 'discussions' %}">Discussions</a></li>
 				  
-				      {% if user.is_staff %}
+				      {% if user.is_superuser %}
+					  
 					     
-						 <li class='navlink'><a href="/admin">Admin</a></li>
+					     <li class='dropdown navlink'><a class='dropdown-toggle' data-toggle='dropdown'>Admin</a>
+						 
+						 <ul class='dropdown-menu'>
+						 <li><a href="{% url 'notes:choosedeptform' %}">Add Notes</a></li>
+						 
+                         <li><a href="{% url 'notes:displayfiles' %}">View Notes</a></li>
+						 
+                         <li><a href="#">Add Papers</a></li>
+						 
+						 <li><a href="#">View Papers</a></li>
+						 </ul>
+						 </li>
 					  
 					  {% endif %}
 				  
@@ -104,18 +118,8 @@
 
 			   </ul>
 
-
-			                <div class='icon'>
-							<a class="search-icon"> <span class='glyphicon glyphicon-search'></span></a>
-
-							<div class='form-search'>
-								<form>
-									<input type="search" placeholder="Search..." name='dept'>
-								</form>
-				            </div>
-                            </div>
-
 			   </div>
+			   
 			</nav>
 
 		  </div>

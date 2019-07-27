@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<div class='jumbotron jumbotron-fluid' style='background-color:transparent'>
+<div class='container container-fluid' style='background-color:#ffffff'>
+
+<div class='table-responsive'>
+<table  class='table'>
+
+ <tr class='row'>
+    <th>Sr.No.</th>
+    <th>Subject</th>
+	<th>Department</th>
+	<th>Semester</th>
+    <th>Term</th>
+    <th>Filename</th>
+    <th style='text-align:center' colspan=2>controls</th>
+  </tr>
+
+{% for i,s,d,e,t,f in file_list %}
+<tr class='row'>
+<td>{{i}}</td>
+<td>{{s}}</td>
+<td>{{d}}</td>
+<td>{{e}}</td>
+<td>{{t}}</td>
+<td>{{f}}</td>
+<td><a href='{% url "notes:deletefiles" %}?id={{i}}' type='button' class='btn btn-danger'>Delete</a></td>
+<td><a href='updatefiles/{{i}}/' type='button' class='btn btn-success'>Update</a></td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+</div>
+
+<div class='pagination'>
+<span class='step-links'>
+   {% if files.has_previous %}
+   <a href='?page=1'>&laquo; first</a>
+   <a href='?page={{files.previous_page_number}}'>previous</a>
+   {% endif %}
+
+   <span style='color:white; font-size:15px;font-weight:bold;' class='current'>
+      Page {{files.number}} of {{files.paginator.num_pages}}
+   </span>
+
+   {% if files.has_next %}
+   <a href='?page={{files.next_page_number}}'>next</a>
+   <a href='?page={{files.paginator.num_pages}}'>last &raquo;</a>
+   {% endif %}
+
+
+</span>
+</div>
+
+
+</div>
+
+
+{% endblock %}

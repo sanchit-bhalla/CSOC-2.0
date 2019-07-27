@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block body_block %}
+{% load static %}
+<br>
+
+
+<div class='jumbotron' style='background-color:transparent;'>
+
+<div class='notes-container'>
+
+<form method='post' enctype="multipart/form-data" action='{% url "notes:addnotesfiles" %}' >
+
+{% csrf_token %}
+
+{% for field in form %}
+<div class='form-group'>
+{{field.label_tag}}{{field}}
+</div>
+{% endfor %}
+
+
+<br>
+<button type='submit' value='submit' class='getnotesbutton'>upload</button>
+</form>
+
+<a href='{% url "notes:displayfiles" %}'>Display Files</a>
+
+</div>
+</div>
+<br><br><br>
+{% endblock %}

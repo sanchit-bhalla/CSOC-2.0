@@ -1,16 +1,16 @@
 
 html,body{
-	
-	
+
+
 	font-size: 100%;
 	font-family: 'Open Sans', sans-serif;
 	background:#ffffff;
 	margin: 0;
 	height:100%;
-    
-	
-	
-	
+
+
+
+
 }
 p,ul li,ol li{
 	margin:0;
@@ -28,8 +28,10 @@ body a:hover{
 	text-decoration:none;
 }
 
+/*---------------------------------------------------------------SCROLL-UP----------------------------------------------------------------*/
+
 .scroll{
-	
+
       position:fixed;
 	  bottom:20px;
 	  right:10px;
@@ -37,20 +39,25 @@ body a:hover{
 	  background:transparent;
 	  border:none;
 	  display:none;
-	  
-	
+
+
 }
 
 .scroll:focus{
-	
+
      outline:none;
-	  
-	
+
+
 }
 
+/*---------------------------------------------------------------SCROLL-UP----------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------------WINDOW-ONLOAD----------------------------------------------------------------*/
 
 .se-pre-con{
-	
+
 	position:fixed;
 	left:0px;
 	top:0px;
@@ -60,35 +67,49 @@ body a:hover{
 	background:url("../images/loader.gif") no-repeat center #fff;
 }
 
+/*---------------------------------------------------------------WINDOW-ONLOAD----------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------------BG-IMAGE----------------------------------------------------------------*/
+
 .bg{
-	
+
 	background-image:url("../images/bgdesign.jpg");
-	
+
 	background-position:center;
-	
+
 	background-repeat:no-repeat;
-	
+
 	background-size:cover;
-	
+
 	min-height:100%;
-	
+
 	width:100%;
-	
-	
+
+
 }
 
+/*---------------------------------------------------------------BG-IMAGE----------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------------HEADER----------------------------------------------------------------*/
 
 
 
 .notes-header{
-	
+
 	position:relative;
-	
-	
+
+
 }
 
 
 /*__navbar__*/
+
+
+
 
 .notes-header>.container>.navbar {
     border-radius: 0;
@@ -101,7 +122,13 @@ body a:hover{
     border: none;
     padding: 20px 0;
 	margin-top:20px;
+	
 }
+
+
+
+/*---------------------------------------------------------------LOGO---------------------------------------------------------------*/
+
 
 .notes-header>.container>.navbar-default>.navbar-header>.logo-container {
     padding-right: 40px;
@@ -112,7 +139,7 @@ body a:hover{
     line-height: 36px;
 	font-weight:600;
     text-transform: uppercase;
-	
+
 }
 
 
@@ -120,6 +147,10 @@ body a:hover{
 .notes-header>.container>.navbar-default>.navbar-header>.logo-container>.navbar-brand,.notes-header>.container>.navbar-default>.navbar-header>.logo-container>.navbar-brand:hover, .notes-header>.container>.navbar-default>.navbar-header>.logo-container>.navbar-brand:focus {
     color: #fff;
 }
+
+/*---------------------------------------------------------------LOGO----------------------------------------------------------------*/
+
+
 
 .notes-header>.container>.navbar-default>.navbar-collapse {
     padding: 0;
@@ -133,26 +164,20 @@ body a:hover{
     margin-right: 0;
 }
 
+/*---------------------------------------------------------------NAV-LINKS---------------------------------------------------------------*/
+
+
+
+
 .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav {
     padding: 0.5em 0 0 0.5em;
-	
+
 }
 
 
-.notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav >.dropdown>.dropdown-menu {
-    border-radius: 0;
-	background: #ffffff;
-	text-align: center;
-	padding: 0;
-	border: none;
-	z-index:100;
-	
-}
-
-/*-----------------------------------------------------------------------------NAV-LINKS------------------------------------------------------------------*/
 
 .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav > li > a {
-    
+
 	padding:0 10px;
     text-transform: uppercase;
     font-weight: 600;
@@ -163,108 +188,85 @@ body a:hover{
 }
 
 .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav > li > a:hover {
-	
+
 	color:#008ECC;
     background-color: #ffffff;
-    
+
 
 }
 
 .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav >.active > a, .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav >.active > a:hover, .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav >.active > a:focus {
     color:#008ECC;
     background-color:#ffffff;
-	
+
 }
 
-/*-----------------------------------------------------------------------------NAV-LINKS------------------------------------------------------------------*/
+/*---------------------------------------------------------------- NAV-LINKS------------------------------------------------------------------*/
 
+
+
+
+/*---------------------------------------------------------------DROPDOWN----------------------------------------------------------------------*/
+
+
+
+.notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav>.dropdown{
+	
+	cursor:pointer;
+	
+}
+.notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav>.dropdown>.dropdown-menu {
+    border-radius: 0;
+	background-color: #ffffff;
+	text-align: center;
+	padding: 0;
+	border: none;
+	z-index:100;
+
+}
 
 .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav >.dropdown>.dropdown-menu>li>a{
-	
+
 	text-transform: uppercase;
 	color: #008ECC;
 	font-size: 12px;
 	font-weight: 600;
 	padding: .8em 0;
 	border-bottom: 1px solid #ececef;
-	
+	background-color:white;
+
 }
 
 
 .notes-header>.container>.navbar-default>.navbar-collapse>.navbar-nav >.dropdown>.dropdown-menu>li a:hover {
-	
+
 	color: #ffffff;
 	text-decoration: none;
 	background-color: #008ECC;
-    
-	
+
+
 }
 
-
-
-
-.notes-header>.container>.navbar-default>.navbar-collapse>.icon{
-	
-}
-
-.notes-header>.container>.navbar-default>.navbar-collapse>.icon a span{
-	
-	color:#ffffff;
-	font-size:25px;
-	margin-left:25px;
-	position:relative;
-	
-}
-
-.notes-header>.container>.navbar-default>.navbar-collapse>.icon>.form-search{
-	
-	
-	display:none;
-	
-}
-
-.notes-header>.container>.navbar-default>.navbar-collapse>.icon form input{
-	
-	
-	border:none;
-	background-color:#ffffff;
-	color:#008ECC;
-	width:100%;
-	padding:1.5% 0;
-	position:absolute;
-	left:0;
-	top:80%;
-}
-
-.notes-header>.container>.navbar-default>.navbar-collapse>.form-search form input:focus{
-	
-	outline:none;
-	
-	
-}
-
-::placeholder{
-	
-	color:#008ECC;
-	font-size:15px;
-	
-}
+/*----------------------------------------------------------------DROPDOWN------------------------------------------------------------------*/
 
 /*//navbar//*/
 
+/*----------------------------------------------------------------HEADER------------------------------------------------------------------*/
 
 
-/*//home-page//*/
+
+/*----------------------------------------------------------------NOTES-PAPER HOMEPAGE------------------------------------------------------------------*/
+
 
 .notes-gallery{
-	
+
 	padding:5em 0;
-	
-	
+
+
 }
 
 .notes-gallery>.container>.overlay{
-	
+
 	height:100%;
 	width:100%;
 	display:none;
@@ -275,11 +277,11 @@ body a:hover{
 	right:0;
 	background-color:rgba(0,0,0,0.9);
 	z-index:40;
-	
+
 }
 
 .notes-gallery>.container>.overlay>.closebtn{
-	
+
 	position:absolute;
 	top:20px;
 	right:45px;
@@ -289,7 +291,7 @@ body a:hover{
 }
 
 .notes-gallery>.container>.overlay>.overlay-content{
-	
+
 	position:absolute;
 	background-color:white;
 	width:70%;
@@ -298,13 +300,13 @@ body a:hover{
 }
 
 .notes-gallery>.container>.overlay>.overlay-content div{
-	
+
 	background-color:#BF5FFF;
 	color:white;
 	text-align:center;
 	text-transform:uppercase;
 	padding:1% 0;
-	
+
 }
 
 .notes-gallery>.container>.overlay>.overlay-content form{
@@ -312,20 +314,20 @@ body a:hover{
 	margin-top:2%;
 	padding-top:3%;
 	padding-bottom:2%
-	
+
 }
 
 .notes-gallery>.container>.overlay>.overlay-content form p{
-	
+
 	margin-left:4%;
 	margin-right:4%;
-	
-	
+
+
 }
 
 
 .notes-gallery>.container>.overlay>.overlay-content form button{
-	
+
 	background-color:#9B30FF;
 	color:white;
 	font-weight:400;
@@ -334,161 +336,139 @@ body a:hover{
 	margin-left:4%;
 	margin-right:4%;
 	padding:5px 8px;;
-	
+
 }
 
 .notes-gallery>.container>.notes-gallery-grid>.agile{
-	
+
 	font-size:40px;
 	color:#ffffff;
 	text-transform:uppercase;
 	text-align:center;
 	font-weight:600;
 	margin-bottom:50px;
-	
-	
+
+
 }
 
 
 .notes-gallery>.container>.row>.notesa{
-	
+
 	margin-bottom:30px;
 	position:relative;
 
-	
+
 }
 
 .notes-gallery>.container>.row>.notesa>.notesaThumbnail,.getnotes{
-	
+
 	max-width:100%;
 	height:100%;
 	position:relative;
 	border:3px solid black;
-	
+
 }
 
 
 .notes-gallery>.container>.row>.notesa>.notesaThumbnail>.notesaThumbnailHover{
-	
+
 	position:absolute;
 	width:100%;
 	text-align:center;
 	bottom:0px;
 	z-index:20;
 	background-color: rgba(5, 34, 42, 0.9);
-	
-	
+
+
 }
 
- 
+
 
 .notes-gallery>.container>.row>.notesa>.notesaThumbnail img{
-	
+
 	display:block;
 	height:auto;
 	max-width:100%;
 	opacity:0.7;
-	
+
 }
 
 .notes-gallery>.container>.row>.notesa>.notesaThumbnail>.notesaThumbnailHover h4{
-	
+
 	font-size:20px;
 	color: #fff;
 	font-family:Alegreya,serif;
 	text-transform:uppercase;
 	letter-spacing:0.5px;
 	font-weight:bold;
-	
-	
-	
+
+
+
 }
 
 .notes-gallery>.container>.row>.notesa>.notesaThumbnail>.notesaThumbnailHover button{
-	
+
 	background-color:transparent;
 	font-size: 16px;
 	border:1px solid #B0DFE5;
 	color:white;
 	font-weight:600;
 	width:100%;
-	
+
 }
 
-/*.notes-gallery>.container>.row>.notesa>.notesaThumbnail>.notesaThumbnailHover button:hover{
-	
-	background-color:transparent;
-	
-}*/
+
 
 .notes-gallery>.container>.row>.notesa>.notesaThumbnail>.notesaThumbnailHover button:focus{
-	
+
 	outline:none;
-	
+
 }
 
 
-/*.notes-gallery>.container>.row>.notesa>.notesaThumbnail:hover .notesaThumbnailHover{
-	
-	opacity:1;
-}*/
-
-
-/*.notes-gallery>.container>.row>.notesa>.notesaThumbnail:hover .notesaThumbnailHover h4{
-	
-	transform:translate(0px,140px);
-	
-}*/
-
-
-/*.notes-gallery>.container>.row>.notesa>.notesaThumbnail:hover img{
-	
-	opacity:0.5;
-	
-}*/
 
 
 .notes-gallery>.container>.row>.notesa>.getnotes{
-	
+
 	display:none;
 	background-color:#ffffff;
 	padding:1em 2em;
 	overflow:hidden;
 	height:150px;
 	position:relative;
-	
-	
-	
+
+
+
 }
 
 
 .notes-gallery>.container>.row>.notesa>.getnotes h4{
-	
+
 	color:#0E4D92;
 	font-size:1.4em;
 	margin-top:0.8em;
 	font-weight:600;
-	
-	
+
+
 }
 
 .notes-gallery>.container>.row>.notesa>.getnotes>.getnotesclose{
-	
+
 	float:right;
-	
+
 }
 
 .notes-gallery>.container>.row>.notesa>.getnotes>.getnotesclose>.closebutton{
-	
+
 	background:none;
 	border:none;
 	outline:none;
 	color:black;
-	
+
 }
 
 .notes-gallery>.container>.row>.notesa>.getnotes>.open{
-	
+
 	background-color: rgba(5, 34, 42, 0.9);
 	position:absolute;
 	left:32%;
@@ -498,26 +478,26 @@ body a:hover{
 	border-radius:12px;
 	color:white;
 	border:none;
-	
-	
+
+
 }
 
 .notes-gallery>.container>.row>.notesa>.getnotes>.open:focus{
-	
+
 	outline:none;
 }
 
 @keyframes blink{
-	
+
 	 from {opacity:1;}
-	
+
 	 to {opacity:0;}
-	
-	
+
+
 }
 
 .notes-gallery>.container>.row>.notesa>.getnotes>.open span{
-	
+
 	font-weight:600;
 	animation-name:blink;
 	animation-duration:0.8s;
@@ -525,53 +505,37 @@ body a:hover{
 }
 
 .notes-gallery>.container>.pagination>.step-links a{
-	
+
 	color:white;
 	font-size:20px;
-	
+
 }
 
 .notes-gallery>.container>.pagination>.step-links a:hover{
-	
+
 	color:powderblue;
-	
+
 }
 
 
-
-
-
+/*----------------------------------------------------------------NOTES-PAPER HOMEPAGE------------------------------------------------------------------*/
 
 /*//home-page//*/
 
 
-/*.glyphicon-remove{
-	
-	transition:transform 0.2s linear 0.01s;
-	
-	
-}
 
-.glyphicon-remove:hover{
-	
-	transform:rotate(90deg);
-}
-
-.glyphicon-remove:active{
-	
-	transform:rotate(-90deg);
-}*/
+/*----------------------------------------------------------------FOOTER------------------------------------------------------------------*/
 
 /*//footer//*/
 
 .footer{
-	
+
 	background-color:#2D3032;
-	
+
 }
 
 .footer>.footer2{
-	
+
     border-bottom:1px dashed white;
 	margin-left:50px;
 	margin-right:50px;
@@ -579,65 +543,65 @@ body a:hover{
 }
 
 .footer>.footer2>.row{
-	
+
 	margin-left:30px;
 	margin-right:30px;
 	margin-bottom:20px;
 }
 
 .footer>.footer2>.row>div{
-	
+
 	color:white;
 	padding:10px;
 	text-align:left;
-	
+
 }
 
 .footer>.footer2>.row>div h3{
-	
+
 	text-transform:uppercase;
-    font-family:Alegreya,serif;	
+    font-family:Alegreya,serif;
 	letter-spacing:2px;
 	font-size:30px;
-	 
+
 }
 
 .footer>.footer2>.row>.aboutus p{
-	
+
 	color:white;
-	
+
 }
 
 .footer>.footer2>.row>.navigation>.base{
-	
+
 	margin:0;
 	padding:0;
 	list-style-type:none;
 	height:100%;
-	
+
 }
 
 .glyphicon-arrow-right{
-	
+
 	color:#7EF9FF;
 	margin:5px;
-	
+
 }
 
 .footer>.footer2>.row>.navigation>.base li{
-	
+
 	margin-top:20px;
 }
 
 
 
 .footer>.footer2>.row>.navigation>.base li span{
-	
+
 	margin-right:10px;
 }
 
 .footer>.footer2>.row>.navigation>.base li a{
-	
+
     text-transform:uppercase;
 	color:white;
 	text-decoration:none;
@@ -645,36 +609,36 @@ body a:hover{
 }
 
 .footer>.footer2>.row>.navigation>.base>.active a{
-	
+
 	color:#7EF9FF;
-	
+
 }
 
 .footer>.footer2>.row>.navigation>.base li a:hover{
-	
+
 	color:#7EF9FF;
-	
+
 }
 
 .footer>.footer2>.row>.newsletter input::placeholder{
-	
+
 	color:gray;
 }
 
 .footer>.footer2>.row>.newsletter input{
-	
+
 	margin-top:10px;
 	margin-bottom:10px;
 	padding:5px;
 }
 
 .footer>.footer2>.row>.newsletter input[type='email']{
-	
+
 	width:300px;
 }
 
 .footer>.footer2>.row>.newsletter button{
-	
+
 	background-color:#7EF9FF;
 	width:70px;
 	border:none;
@@ -682,28 +646,28 @@ body a:hover{
 }
 
 .footer>.footer2>.row>.newsletter p{
-	
+
 	margin-top:10px;
 }
 
 .footer>.footer-end{
-	
+
 	background-color:black;
 	padding:23px;
 	position:relative;
-	
-	
+
+
 }
 
 .footer>.footer-end>.social-media-icons{
-	
+
 	margin-left:46px;
 	margin-right:46px;
 	position:relative;
 }
 
 .footer>.footer-end>.social-media-icons>.fa{
-	
+
 	font-size:12px;
 	padding:10px;
 	width:30px;
@@ -712,16 +676,16 @@ body a:hover{
 	margin:5px 2px;
 	border-radius:50%;
 	font-weight:400;
-	
-	
+
+
 }
 
 .footer>.footer-end>.social-media-icons>.fa:hover{
-	
+
 	opacity:0.7;
-	
-	
-	
+
+
+
 }
 
 .footer>.footer-end>.social-media-icons>.fa-facebook {
@@ -745,61 +709,66 @@ body a:hover{
 }
 
 .footer>.footer-end>.social-media-icons>.fa-instagram{
-	
+
   background: #125688;
   color: white;
-	
+
 }
 
 .footer>.footer-end>.arr{
-	
-	
+
+
 	color:white;
 	position:absolute;
 	right:50px;
 	top:35px;
-	
+
 }
-
-
-
-
-
 
 /*//footer//*/
 
+/*----------------------------------------------------------------FOOTER------------------------------------------------------------------*/
 
 
-/*//getnotes//*/
+
+
+
+/*----------------------------------------------------------------NOTES-PAPER HOMEPAGE------------------------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------------------NOTES-CONTAINER------------------------------------------------------------------*/
+
 
 .jumbotron{
-	
+
 	background-color:transparent;
 }
 
 .jumbotron>.notes-container{
-	
+
 	background-color:#ffffff;
 	margin-left:10%;
 	margin-right:10%;
 	padding:5%;
-	
+
 }
 
 .jumbotron>.notes-container form{
-	
+
     margin-right:5%;
 	margin-left:5%;
 }
 
 .jumbotron>.notes-container form label{
-	
+
 	color:black;
-	
+
 }
 
 .jumbotron>.notes-container form button{
-	
+
 	color:white;
 	border:none;
 	background-color:#588BAE;
@@ -808,16 +777,78 @@ body a:hover{
 	box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/*//getnotes//*/
+.jumbotron>.notes-container a{
+
+	color:white;
+	border:none;
+	background-color:#588BAE;
+	padding:10px 20px;
+	font-weight:bold;
+	box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	display:block;
+	width:140px;
+	margin-left:5%;
+	margin-top:2%;
+
+
+}
+
+/*----------------------------------------------------------------NOTES-CONTAINER------------------------------------------------------------------*/
+
+.jumbotron>.pagination{
+
+			margin-left:6.5%;
+
+}
+
+.jumbotron>.pagination>.step-links a{
+
+	color:white;
+}
+
+.jumbotron>.pagination>.step-links a:hover{
+
+	   color:powderblue;
+}
+
+
+/*----------------------------------------------------------------JUMBOTRON-CONTAINER------------------------------------------------------------------*/
+
+
+
+.jumbotron>.container{
+
+	padding:2%;
+
+}
+
+
+
+.jumbotron>.container form button{
+
+	color:white;
+	border:none;
+	background-color:#588BAE;
+	padding:10px 20px;
+	font-weight:bold;
+	box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	display:block;
+	width:100px;
+	margin-bottom:2%;
+
+}
+
+/*----------------------------------------------------------------JUMBOTRON-CONTAINER------------------------------------------------------------------*/
+
 
 
 /*//displaypdf//*/
 
 .display-notes-div>.display-notes-conatiner{
-	
+
 	background-color:#ffffff;
 	border:1px solid yellow;
-	
+
 }
 
 /*//displaypdf//*/
@@ -825,9 +856,9 @@ body a:hover{
 
 
 @media only screen and (max-width: 768px){
-	
+
 	.notes-gallery>.container>.overlay>.overlay-content form button{
-		
+
 	background-color:#9B30FF;
 	color:white;
 	font-weight:400;
@@ -836,64 +867,64 @@ body a:hover{
 	margin-right:4%;
 	margin-left:4%;
 	padding:5px 8px;
-		
+
 	}
-	
+
 	.notes-gallery>.container>.overlay>.overlay-content{
-	
+
 	position:absolute;
 	background-color:white;
 	width:100%;
 	top:30%;
 	left:0%;
-	
+
 }
-	
+
 	.notes-gallery>.container>.overlay>.overlay-content form{
 
 	margin-top:10%;
-	
-	
+
+
 	}
-	
-	
+
+
 	.footer>.footer-end>.social-media-icons{
-		
-	
+
+
 	position:absolute;
 	top:7px;
 	left:0px;
-		
-		
+
+
 	}
-	
+
 	.footer>.footer-end>.social-media-icons>.sc{
-		
+
 		display:none;
-		
+
 	}
-	
-	
+
+
 	.footer>.footer-end>.social-media-icons>.fa{
-	
+
 	text-decoration:none;
 	border-radius:50%;
 	font-weight:200;
 	font-size:10px;
-	
+
 	}
-	
+
 	.footer>.footer-end>.arr{
-	
+
 	color:white;
 	position:absolute;
 	right:43px;
 	top:20px;
-	
+
 	}
-	
+
 	.notes-header>.container>.navbar-default>.navbar-collapse>.icon form input{
-		
+
 	border:none;
 	background-color:#ffffff;
 	color:#008ECC;
@@ -902,13 +933,7 @@ body a:hover{
 	position:absolute;
 	left:0;
 	top:100%;
-		
+
 	}
-	
+
 }
-
-
-
-
-
-

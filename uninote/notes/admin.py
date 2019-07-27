@@ -7,4 +7,4 @@ from django.forms import ClearableFileInput
 admin.site.register(Departments)
 admin.site.register(Subject)
 admin.site.register(PdfFiles)
-admin.site.register(Notes)
+#admin.site.register(Notes)
