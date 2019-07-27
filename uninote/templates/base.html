@@ -64,11 +64,11 @@
 
 
 				<div class='collapse navbar-collapse navbar-right' id='collapsibleNavbar'>
-				
-				
+
+
      			<ul id='navlist'  class='nav navbar-nav'>
-				
-				
+
+
 			      <li class='navlink'>
 				  <a href="{% url 'homepage' %}">Home</a>
 				  </li>
@@ -76,50 +76,37 @@
 				  <li class='navlink'>
 				  <a href='/notes/'>Notes</a>
 				  </li>
-				  
+
 
 				  <li class='navlink'>
 				  <a href='/papers/'>Papers</a>
 				  </li>
 
                   <li class='navlink'><a href="{% url 'ask' %}">Just ask!</a></li>
-				  
+
                   <li class='navlink'><a href="{% url 'about' %}">About</a></li>
-				  
+
                   <li class='navlink'><a href="{% url 'discussions' %}">Discussions</a></li>
-				  
+
 				      {% if user.is_superuser %}
-					  
-					     
-					     <li class='dropdown navlink'><a class='dropdown-toggle' data-toggle='dropdown'>Admin</a>
-						 
-						 <ul class='dropdown-menu'>
-						 <li><a href="{% url 'notes:choosedeptform' %}">Add Notes</a></li>
-						 
-                         <li><a href="{% url 'notes:displayfiles' %}">View Notes</a></li>
-						 
-                         <li><a href="#">Add Papers</a></li>
-						 
-						 <li><a href="#">View Papers</a></li>
-						 </ul>
-						 </li>
-					  
-					  {% endif %}
-				  
+					  			<li class='navlink'><a href="{% url 'otp' %}">Upload</a></li>
+						 <!-- <a href="{% url 'notes:choosedeptform' %}">Add Notes</a> -->
+					    {% endif %}
+
                       {% if user.is_authenticated %}
-					  
+
                         <li class='navlink'><a href="{% url 'register_app:logout' %}">Logout</a></li>
-						
+
                       {% else %}
-					  
+
                         <li class='navlink'><a href="{% url 'register_app:login' %}">Login/SignUp</a></li>
-						
+
                       {% endif %}
 
 			   </ul>
 
 			   </div>
-			   
+
 			</nav>
 
 		  </div>
@@ -133,7 +120,7 @@
         {% block body_block %}
         <!-- anything outside this will inherited when extends -->
         {% endblock %}
-    
+
 
     {% block without_container %}
     <!-- anything outside this will inherited when extends -->
@@ -184,11 +171,11 @@
 
 <span class='sc' style='color:white;margin-left:3px;'>Stay Connected:</span>
 
-<a href='#' class='fa fa-facebook'></a>
-<a href="#" class="fa fa-twitter"></a>
-<a href="#" class="fa fa-google"></a>
-<a href="#" class="fa fa-linkedin"></a>
-<a href="#" class="fa fa-instagram"></a>
+<a href='https://github.com/sanchit-bhalla' class='fa fa-facebook'></a>
+<a href="https://github.com/sanchit-bhalla" class="fa fa-twitter"></a>
+<a href="https://github.com/sanchit-bhalla" class="fa fa-google"></a>
+<a href="https://github.com/sanchit-bhalla" class="fa fa-linkedin"></a>
+<a href="https://github.com/sanchit-bhalla" class="fa fa-instagram"></a>
 
 </div>
 
@@ -214,58 +201,58 @@
 
 var a=document.querySelectorAll('#mydata');
 console.log(a)
- 
+
 function openform0(){
-	
+
 	document.getElementById('myOverlay').style.display='block';
 	var djangodata=$(a[0]).data('dept');
 	document.getElementById("department").value=djangodata;
-	
+
 };
 
 function openform1(){
-	
+
 	document.getElementById('myOverlay').style.display='block';
 	var djangodata=$(a[1]).data('dept');
 	document.getElementById("department").value=djangodata;
-	
+
 };
 
 function openform2(){
-	
+
 	document.getElementById('myOverlay').style.display='block';
 	var djangodata=$(a[2]).data('dept');
 	document.getElementById("department").value=djangodata;
-	
+
 };
 
 function openform3(){
-	
+
 	document.getElementById('myOverlay').style.display='block';
 	var djangodata=$(a[3]).data('dept');
 	document.getElementById("department").value=djangodata;
-	
+
 };
 
 function openform4(){
-	
+
 	document.getElementById('myOverlay').style.display='block';
 	var djangodata=$(a[4]).data('dept');
 	document.getElementById("department").value=djangodata;
-	
+
 };
 
 function openform5(){
-	
+
 	document.getElementById('myOverlay').style.display='block';
 	var djangodata=$(a[5]).data('dept');
 	document.getElementById("department").value=djangodata;
-	
+
 };
 
 
 function closeform(){
-	
+
 	document.getElementById('myOverlay').style.display='none';
 }
 

@@ -33,6 +33,8 @@ urlpatterns = [
     re_path(r'^response/$',views.Response.as_view(),name='response'),
     re_path(r'^posts/',include('posts.urls',namespace='posts')),
     re_path(r'^groups/',include('groups.urls',namespace='groups')),
+    re_path(r'^otp/',views.otp_form_view,name='otp'),
+    re_path(r'^confirm_otp/',views.confirm_otp_form_view,name='confirm_otp'),
     path('notes/',include('notes.urls')),
     path('papers/',include('papers.urls')),
 

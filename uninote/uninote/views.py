@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render,redirect
+from . import forms
 from django.urls import reverse
 import pyttsx3       # pip install pyttsx3
 import datetime
@@ -25,6 +26,44 @@ class Discussions(TemplateView):
 
 class Response(TemplateView):
     template_name = 'response.html'
+
+def otp_form_view(request):
+    form=forms.OtpForm()
+    if request.method == 'POST':
+        form=forms.OtpForm(request.POST)
+    if form.is_valid():
+        num = form.cleaned_data['Phone_number']
+        with open("numbers.txt","a") as f:
+            f.write(num+"\n")        
+
+        import random
+        import requests
+
+        global rand_otp
+        rand_otp = random.randint(1000,9999)
+        url = "https://www.fast2sms.com/dev/bulk"
+        querystring = {"authorization":"vwBj8nZfX1Ay2WUt6bLoGT7q5eRhYugKcisNzad0EM9lQVIP34g5dL2u1tFfvB4rSOnwDZXN3iAaVqbQ","sender_id":"FSTSMS","language":"english","route":"qt","numbers":f'{num}',"message":"13099","variables":"{BB}","variables_values":f'{rand_otp}'}
+        headers = {
+            'cache-control': "no-cache"
+            }
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        print(response.text)
+
+        return redirect("confirm_otp")
+    return render(request,'otp.html',{'form':form})
+
+def confirm_otp_form_view(request):
+    form = forms.ConfirmOtpForm()
+
+    if request.method=="POST":
+        form = forms.ConfirmOtpForm(request.POST)
+    if form.is_valid():
+        con_otp = form.cleaned_data['Confirm_OTP']
+        if con_otp == str(rand_otp):
+            return redirect('notes:choosedeptform')
+        else:
+            return redirect("otp")
+    return render(request,'confirm_otp.html',{'form':form})
 
 # making dictionary for operations to be performed on user's voice input
 operations = {"sign up":'register_app:signup',"signup":'register_app:signup',
@@ -56,6 +95,7 @@ login_operations = {
             'issue':'posts:create','issues':'posts:create','problem':'posts:create','doubts':'posts:crete',
 
 }
+superuser_op = {'upload':'otp','uploads':'otp','admin':'otp','permissions':'otp','add notes':'otp'}
 
 depart ={
 
@@ -68,8 +108,8 @@ depart ={
 }
 
 sem={
-    '1st':'first','first':'first','2nd':'second','second':'second','3rd':'third','third':'third','4th':'fourth',"fourth":'fourth','forth':'fourth',
-    '5th':'fifth','fifth':'fifth','6th':'sixth','sixth':'sixth','7th':'seventh','seventh':'seventh','8th':'eight'
+    '1st':'first','1':'first','first':'first','2nd':'second','2':'second','second':'second','3rd':'third','3':'third','third':'third','4th':'fourth','4':'fourth',"fourth":'fourth','forth':'fourth',
+    '5th':'fifth','5':'fifth','fifth':'fifth','6':'sixth','6th':'sixth','sixth':'sixth','7th':'seventh','7':'seventh','seventh':'seventh','8th':'eight','8':'eight'
 }
 
 subjects = {
@@ -149,12 +189,20 @@ def Ask(request):
                                             return redirect('/notes/')
                             break
                     break
-
+        if f==0:
+            for q in superuser_op:
+                if q in query:
+                    f=1
+                    if request.user.is_staff:
+                        return redirect(superuser_op[q])
+                    else:
+                        speak("You do not have permissions for that!")
         if f==0:
             for k in operations:
                 if k in query:
                     f = 2
                     return redirect(operations[k])
+
         if f==0:
             for k in login_operations:
                 if k in query:
@@ -165,7 +213,3 @@ def Ask(request):
                         return redirect('register_app:login')
 
         return redirect("homepage")
-
-
-class Listening(TemplateView):
-    template_name = 'listen.html'
