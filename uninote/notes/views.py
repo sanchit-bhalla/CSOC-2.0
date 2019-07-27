@@ -194,18 +194,24 @@ def AddFilesForm(request):
 
    else:
 
-       department=request.GET['department']
-       semester=request.GET['semester']
-       dept_subjects=Subject.objects.all().filter(Q(department__dept=department),Q(semester=semester))
-       if len(dept_subjects)==0:
-           
-           return HttpResponseNotFound('Subjects not added')
+       if request.GET=={}:
 
+           return HttpResponseRedirect('choosedeptform')
+        
        else:
+            
+            department=request.GET['department']
+            semester=request.GET['semester']
+            dept_subjects=Subject.objects.all().filter(Q(department__dept=department),Q(semester=semester))
+            if len(dept_subjects)==0:
            
-           form=AddPdffiles()
-           form.fields['subject'].queryset=Subject.objects.all().filter(Q(department__dept=department),Q(semester=semester))
-           return render(request=request,template_name='notes/addfiles.html',context={'form':form})
+                return HttpResponseNotFound('Subjects not added')
+
+            else:
+           
+              form=AddPdffiles()
+              form.fields['subject'].queryset=Subject.objects.all().filter(Q(department__dept=department),Q(semester=semester))
+              return render(request=request,template_name='notes/addfiles.html',context={'form':form})
 
 
 
