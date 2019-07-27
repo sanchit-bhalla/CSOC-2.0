@@ -101,3 +101,6 @@ It is a community where a user can discuss his/her doubts with other users. Here
    - OTP is sent to the number provided.
    - Now if the OTP is confirmed only then user will see form to upload notes.
    - There is also a resend otp button.
+   
+  # Authentication for copyright notes
+     When user input number for OTP, his personal number is stored from which we get the information that copyright pdf is uploaded by        which user.
