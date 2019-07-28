@@ -64,6 +64,7 @@ class PdfFiles(models.Model):
     files=models.FileField(upload_to='notes/myfiles',default=1)
     image=models.ImageField(upload_to='myimages',null=True,blank=True)
     term=models.CharField(max_length=20,choices=TERM,default=1)
+    date=models.DateTimeField(auto_now_add=True,blank=True)
 
 
     class Meta:

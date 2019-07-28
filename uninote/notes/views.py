@@ -288,7 +288,7 @@ def DisplayFiles(request):
                 file_name=x.files.name.replace('notes/myfiles/','')
                 file_name=file_name.replace('.pdf','')
 
-                file_list.append((x.id,x.subject.subject,x.subject.department.dept,x.subject.semester,x.term,file_name))
+                file_list.append((x.id,x.subject.subject,x.subject.department.dept,x.subject.semester,x.term,file_name,request.user.get_username(),x.date))
 
             paginator=Paginator(file_list,4)
 
