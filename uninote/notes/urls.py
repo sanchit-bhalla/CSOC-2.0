@@ -19,6 +19,7 @@ urlpatterns=[
                ################################ SUPERUSER URLS #####################################
                path('choosedeptform',views.ChooseDeptForm,name='choosedeptform'),
                path('addnotesfiles',views.AddFilesForm,name='addnotesfiles'),
+               path('choosedeptsem',views.ChooseDeptSem,name='choosedeptsem'),
                path('displayfiles',views.DisplayFiles,name='displayfiles'),
                path('deletefiles',views.DeleteFiles,name='deletefiles'),
                path('updatefiles/<int:id>/',views.UpdateFilesForm,name='updatefiles'),

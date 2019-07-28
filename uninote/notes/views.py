@@ -233,38 +233,72 @@ def AddFilesForm(request):
               form.fields['subject'].queryset=Subject.objects.all().filter(Q(department__dept=department),Q(semester=semester))
               return render(request=request,template_name='notes/addfiles.html',context={'form':form})
 
+            
+
 
 
 @login_required
 @user_passes_test(lambda u:u.is_superuser,login_url='/notes/')
+def ChooseDeptSem(request):
+
+   form=Choose()
+
+   dept_list=[]
+
+   for x in Departments.objects.all():
+
+       dept_list.append(x.dept)
+
+   CHOICES=dept_list
+
+   form.fields['department'].choices=[(choice,choice) for choice in CHOICES]
+
+   return render(request=request,template_name='notes/choosedept.html',context={'form':form})
+
+
+    
+@login_required
+@user_passes_test(lambda u:u.is_superuser,login_url='/notes/')
 def DisplayFiles(request):
 
-    query_files=PdfFiles.objects.all()
+    if request.GET=={}:
 
-    if len(query_files)==0:
-
-        return HttpResponseNotFound('files not present')
+        return HttpResponseRedirect('choosedeptsem')
 
     else:
 
-      file_list=[]
+        dept=request.GET['department']
+        sem=request.GET['semester']
+        dict={}
+        dict['dept']=dept
+        dict['sem']=sem
 
-      for x in query_files:
+        query_files=PdfFiles.objects.all().filter(Q(subject__semester=sem),Q(subject__department__dept=dept))
 
-          file_name=x.files.name.replace('notes/myfiles/','')
-          file_name=file_name.replace('.pdf','')
+        if len(query_files)==0:
 
-          file_list.append((x.id,x.subject.subject,x.subject.department.dept,x.subject.semester,x.term,file_name))
+           return HttpResponseNotFound('files not present')
 
-      paginator=Paginator(file_list,4)
+        else:
 
-      page=request.GET.get('page')
+            file_list=[]
 
-      files=paginator.get_page(page)
+            for x in query_files:
 
-      file_list_set=files.object_list
+                file_name=x.files.name.replace('notes/myfiles/','')
+                file_name=file_name.replace('.pdf','')
 
-      return render(request=request,template_name='notes/displayfiles.html',context={'file_list':file_list_set,'files':files})
+                file_list.append((x.id,x.subject.subject,x.subject.department.dept,x.subject.semester,x.term,file_name))
+
+            paginator=Paginator(file_list,4)
+
+            page=request.GET.get('page')
+
+            files=paginator.get_page(page)
+
+            file_list_set=files.object_list
+
+            return render(request=request,template_name='notes/displayfiles.html',context={'file_list':file_list_set,'files':files,'mydata':dict})
 
 
 @login_required

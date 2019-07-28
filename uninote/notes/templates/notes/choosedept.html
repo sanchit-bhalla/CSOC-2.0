@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block body_block %}
+{% load static %}
+<br>
+
+
+<div class='jumbotron' style='background-color:transparent;'>
+
+<div class='notes-container'>
+
+<form method='get' action='{% url "notes:displayfiles" %}' >
+
+  {% for field in form %}
+  <div class='form-group'>
+  {{field.label_tag}}{{field}}
+  </div>
+  {% endfor %}
+
+
+<br>
+<button type='submit' value='submit' class='getnotesbutton'>submit</button>
+</form>
+
+
+
+</div>
+</div>
+<br><br><br>
+{% endblock %}
