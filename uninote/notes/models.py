@@ -65,6 +65,7 @@ class PdfFiles(models.Model):
     image=models.ImageField(upload_to='myimages',null=True,blank=True)
     term=models.CharField(max_length=20,choices=TERM,default=1)
     date=models.DateTimeField(auto_now_add=True,blank=True)
+    added_by=models.TextField(max_length=20,editable=False,default=1)
 
 
     class Meta:
@@ -75,6 +76,8 @@ class PdfFiles(models.Model):
     def __str__(self):
 
         return '{},{} sem,{}'.format(self.subject.subject,self.subject.semester,self.term)
+
+
 
     
     

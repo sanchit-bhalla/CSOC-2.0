@@ -15,11 +15,12 @@
     <th>Term</th>
     <th>Filename</th>
 	<th>Added By</th>
+	<th>number</th>
 	<th>Date</th>
     <th style='text-align:center' colspan=2>controls</th>
   </tr>
 
-{% for i,s,d,e,t,f,u,dt in file_list %}
+{% for i,s,d,e,t,f,u,dt,l in file_list %}
 <tr class='row'>
 <td>{{i}}</td>
 <td>{{s}}</td>
@@ -28,6 +29,7 @@
 <td>{{t}}</td>
 <td>{{f}}</td>
 <td>{{u}}</td>
+<td>{{l}}</td>
 <td>{{dt}}</td>
 
 <td><a href='{% url "notes:deletefiles" %}?id={{i}}' type='button' class='btn btn-danger'>Delete</a></td>

@@ -9,7 +9,7 @@ from django.views.generic.base import TemplateView
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required,user_passes_test
 from django.template.defaulttags import register
-
+import os
 
 
 @register.filter
@@ -208,7 +208,18 @@ def AddFilesForm(request):
        form=AddPdffiles(request.POST,request.FILES)
        if form.is_valid():
 
-           new_file=form.save()
+           new_file=form.save(commit=False)
+
+           module_dir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+           file_path=os.path.join(module_dir,'numbers.txt')
+           with open(file_path,'r') as file:
+             data=file.readlines()
+             list_numbers=list(data)[::-1]
+             last_number=list_numbers[0]
+             new_file.added_by=last_number
+             new_file.save()
+
+
 
            return HttpResponseRedirect('displayfiles')
 
@@ -261,6 +272,9 @@ def ChooseDeptSem(request):
 @user_passes_test(lambda u:u.is_superuser,login_url='/notes/')
 def DisplayFiles(request):
 
+    
+    
+
     if request.GET=={}:
 
         return HttpResponseRedirect('choosedeptsem')
@@ -280,6 +294,7 @@ def DisplayFiles(request):
            return HttpResponseNotFound('files not present')
 
         else:
+            
 
             file_list=[]
 
@@ -288,7 +303,7 @@ def DisplayFiles(request):
                 file_name=x.files.name.replace('notes/myfiles/','')
                 file_name=file_name.replace('.pdf','')
 
-                file_list.append((x.id,x.subject.subject,x.subject.department.dept,x.subject.semester,x.term,file_name,request.user.get_username(),x.date))
+                file_list.append((x.id,x.subject.subject,x.subject.department.dept,x.subject.semester,x.term,file_name,request.user.get_username(),x.date,x.added_by))
 
             paginator=Paginator(file_list,4)
 
