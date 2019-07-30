@@ -217,6 +217,7 @@ def AddFilesForm(request):
              list_numbers=list(data)[::-1]
              last_number=list_numbers[0]
              new_file.added_by=last_number
+             new_file.added_by_name=request.user.get_username()
              new_file.save()
 
 
@@ -303,7 +304,7 @@ def DisplayFiles(request):
                 file_name=x.files.name.replace('notes/myfiles/','')
                 file_name=file_name.replace('.pdf','')
 
-                file_list.append((x.id,x.subject.subject,x.subject.department.dept,x.subject.semester,x.term,file_name,request.user.get_username(),x.date,x.added_by))
+                file_list.append((x.id,x.subject.subject,x.subject.department.dept,x.subject.semester,x.term,file_name,x.added_by_name,x.date,x.added_by))
 
             paginator=Paginator(file_list,4)
 
