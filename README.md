@@ -1,4 +1,4 @@
-# CSOC-2.0
+# CSOC-2.0  - make your own python project ..yes it is possible with us.
 ### Link for demo video (https://drive.google.com/open?id=1MF980HOWH1yjsLt6NJB-35uwSrHHLlGV)
     - This video doesn't show all funtionalities like Voice Search which we discuss below
 # Requirements
